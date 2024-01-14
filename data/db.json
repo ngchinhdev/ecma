@@ -1,0 +1,68 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "category": "Trái cây",
+      "name": "Táo kẹo candine organic Pháp",
+      "price": 79500,
+      "orgPrice": 1000000,
+      "quantity": 100,
+      "likes": 0,
+      "purchased": 0,
+      "images": ["taophap1.webp", "taophap2.png"],
+      "description": "Nếu táo Fuji “đốn tim” bạn với chất thịt dày ngọt, táo Ariane “mê hoặc” bạn với độ giòn và thơm đặc trưng, thì Candine hữu cơ chính là giống táo có sự giao thoa một cách tinh tế giữa Fuji và Ariane, được thừa hưởng những điểm mạnh của hai loại táo này. Nhờ vậy, Táo Candine Organic có sắc đỏ sáng bóng, thịt táo mọng nước cùng độ giòn ngọt mà chúng ta khó có thể tìm được sự kết hợp đó ở những giống táo khác."
+    },
+    {
+      "id": 2,
+      "category": "Trái cây",
+      "name": "Táo envy New Zealand",
+      "price": 124500,
+      "orgPrice": 1000000,
+      "quantity": 100,
+      "likes": 0,
+      "purchased": 0,
+      "images": ["taoenvy1.webp", "taoenvy2.jpg", "taoenvy3.jpg"],
+      "description": "Envy có quả to tròn, với vỏ màu đỏ điểm thêm các sọc màu vàng Envy  mang trong mình vị ngọt tự nhiên, hương thơm quyến rũ cùng vị giòn tan khiến bạn không thể cưỡng lại được. Táo Envy là một loại trái cây nhập khẩu quen thuộc với mọi người. Được biết đến là giống táo thơm ngon bậc nhất thế giới, táo Envy còn rất tốt cho sức khỏe vời nhiều giá trị dinh dưỡng bất ngờ."
+    },
+    {
+      "id": 3,
+      "category": "Rau củ",
+      "name": "Táo envy New Zealand",
+      "price": 124500,
+      "orgPrice": 1000000,
+      "quantity": 100,
+      "likes": 0,
+      "purchased": 0,
+      "images": ["taoenvy1.webp", "taoenvy2.jpg", "taoenvy3.jpg"],
+      "description": "Envy có quả to tròn, với vỏ màu đỏ điểm thêm các sọc màu vàng Envy  mang trong mình vị ngọt tự nhiên, hương thơm quyến rũ cùng vị giòn tan khiến bạn không thể cưỡng lại được. Táo Envy là một loại trái cây nhập khẩu quen thuộc với mọi người. Được biết đến là giống táo thơm ngon bậc nhất thế giới, táo Envy còn rất tốt cho sức khỏe vời nhiều giá trị dinh dưỡng bất ngờ."
+    },
+    {
+      "id": 4,
+      "category": "Thịt",
+      "name": "Táo envy New Zealand",
+      "price": 124500,
+      "orgPrice": 1000000,
+      "quantity": 100,
+      "likes": 0,
+      "purchased": 0,
+      "images": ["taoenvy1.webp", "taoenvy2.jpg", "taoenvy3.jpg"],
+      "description": "Envy có quả to tròn, với vỏ màu đỏ điểm thêm các sọc màu vàng Envy  mang trong mình vị ngọt tự nhiên, hương thơm quyến rũ cùng vị giòn tan khiến bạn không thể cưỡng lại được. Táo Envy là một loại trái cây nhập khẩu quen thuộc với mọi người. Được biết đến là giống táo thơm ngon bậc nhất thế giới, táo Envy còn rất tốt cho sức khỏe vời nhiều giá trị dinh dưỡng bất ngờ."
+    }
+  ],
+  "blogs": [
+    {
+      "thumbnail": "blog-1.jpg",
+      "createAt": "2023-12-22T00:00:00.000Z",
+      "comments": 10,
+      "title": "Cooking tips make cooking simple",
+      "contents": "Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat"
+    },
+    {
+      "thumbnail": "blog-1.jpg",
+      "createAt": "2023-12-22T00:00:00.000Z",
+      "comments": 10,
+      "title": "Cooking tips make cooking simple",
+      "contents": "Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat"
+    }
+  ]
+}
