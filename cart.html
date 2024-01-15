@@ -12,7 +12,9 @@
 
     <title>Trai thanh long co trong mi tom</title>
 
-    <script defer src="js/index.js"></script>
+    <script defer type="module" src="js/common.js"></script>
+    <script defer type="module" src="js/cart.js"></script>
+    <!-- <script defer type="module" src="js/index.js"></script> -->
 </head>
 <body>
     <header>
@@ -42,14 +44,14 @@
         </div>
         <div class="header_main">
             <div class="container ic">
-                <a href="" class="logo">
+                <a href="index.html" class="logo">
                     <img src="./images/logo.png" alt="Logo">
                 </a>
                 <ul class="nav ic">
-                    <li class="active"><a href="">Trang chủ</a></li>
-                    <li><a href="">Cửa hàng</a></li>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="shop.html">Cửa hàng</a></li>
                     <li><a href="">Sản phẩm</a></li>
-                    <li><a href="">Bài viết</a></li>
+                    <li><a href="blog.html">Bài viết</a></li>
                     <li><a href="">Liên hệ</a></li>
                 </ul>
                 <ul class="cart_site ic">
@@ -58,8 +60,10 @@
                         <span>3</span>
                     </li>
                     <li>
-                        <i class="ri-shopping-bag-fill"></i>
-                        <span>3</span>
+                        <a href="cart.html">
+                            <i class="ri-shopping-bag-fill"></i>
+                            <span>3</span>
+                        </a>
                     </li>
                     <li>Tổng: <b>22.000d</b></li>
                 </ul>
@@ -107,19 +111,19 @@
         <div class="container">
             <ul>
                 <li>
-                    <a href="">Trang chu</a>
+                    <a href="index.html">Trang chủ</a>
                     <span> <i class="fa fa-angle-right"></i> </span>
                 </li>
                 <li>
-                    <a href="">Trang chu</a>
-                    <span> <i class="fa fa-angle-right"></i> </span>
+                    <a href="cart.html">Giỏ hàng</a>
+                    <!-- <span> <i class="fa fa-angle-right"></i> </span> -->
                 </li>
             </ul>
         </div>
     </div>
 
     <section class="cart">
-        <div class="container">
+        <div class="container side_pad">
             <table>
                 <thead>
                     <tr>

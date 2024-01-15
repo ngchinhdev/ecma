@@ -12,7 +12,7 @@ export async function generateMenuCategories() {
     let markup = '';
 
     categories.map(category => {
-        markup += `<li><a href="">${category.name}</a></li>`;
+        markup += `<li><a href="product.html?query=${category.name}">${category.name}</a></li>`;
     });
 
     menuCategory.insertAdjacentHTML('beforeend', markup);

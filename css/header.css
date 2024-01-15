@@ -31,6 +31,12 @@ a {
     padding-right: 15px;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
 /* Some common declares */
 .container {
     width: 100%;
@@ -52,6 +58,13 @@ a {
     background: #000000;
     opacity: 0.1;
     content: "";
+}
+
+.empty_prods {
+    text-align: center;
+    width: 100%;
+    padding: 5rem 0;
+    font-size: 1.2rem;
 }
 
 /* Main css */

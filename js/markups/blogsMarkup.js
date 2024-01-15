@@ -1,8 +1,6 @@
 import { getBlogs } from "../api/getBlogs.js";
 import { loader } from "../utils/loader.js";
 
-const blogContainer = document.querySelector('.blog .blog_row');
-
 function formatDate(value) {
     const date = new Date(value);
 
@@ -13,9 +11,9 @@ function formatDate(value) {
     return `${day < 9 ? '0' + day : day}/${month < 9 ? '0' + month : month}/${year}`;
 }
 
-export async function generateBlogs() {
-    blogContainer.innerHTML = '';
-    await loader(blogContainer);
+export async function generateBlogs(container) {
+    container.innerHTML = '';
+    await loader(container);
 
     const blogs = await getBlogs();
 
@@ -28,6 +26,7 @@ export async function generateBlogs() {
                             <img src="./images/blogs/${blog.thumbnail}" alt="${blog.title}">
                         </div>
                         <div class="blog_text">
+                            <div class="cate_blog">${blog.category}</div>
                             <ul>
                                 <li><i class="fa fa-calendar-o"></i>${formatDate(blog.createAt)}</li>
                                 <li><i class="fa fa-comment-o"></i> ${blog.comments}</li>
@@ -39,7 +38,6 @@ export async function generateBlogs() {
                 </div>`;
     });
 
-    blogContainer.innerHTML = '';
-    blogContainer.insertAdjacentHTML('beforeend', markup);
-
+    container.innerHTML = '';
+    container.insertAdjacentHTML('beforeend', markup);
 }

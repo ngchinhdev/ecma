@@ -55,12 +55,14 @@
       "createAt": "2023-12-22T00:00:00.000Z",
       "comments": 10,
       "title": "Cooking tips make cooking simple",
+      "category": "Sức khỏe",
       "contents": "Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat"
     },
     {
       "thumbnail": "blog-1.jpg",
       "createAt": "2023-12-22T00:00:00.000Z",
       "comments": 10,
+      "category": "Giữ dáng",
       "title": "Cooking tips make cooking simple",
       "contents": "Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat"
     }

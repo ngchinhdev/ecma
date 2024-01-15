@@ -5,15 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/detail.css">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> -->
+    <link rel="stylesheet" href="css/product.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.0.1/remixicon.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css">
 
     <title>Trai thanh long co trong mi tom</title>
 
     <script defer type="module" src="js/common.js"></script>
-    <script defer src="js/index.js"></script>
+    <script defer type="module" src="js/product.js"></script>
 </head>
 <body>
     <header>
@@ -43,14 +42,14 @@
         </div>
         <div class="header_main">
             <div class="container ic">
-                <a href="index.html" class="logo">
+                <a href="" class="logo">
                     <img src="./images/logo.png" alt="Logo">
                 </a>
                 <ul class="nav ic">
-                    <li class="active"><a href="">Trang chủ</a></li>
-                    <li><a href="">Cửa hàng</a></li>
-                    <li><a href="">Sản phẩm</a></li>
-                    <li><a href="">Bài viết</a></li>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="shop.html">Cửa hàng</a></li>
+                    <li class="active"><a href="product.html">Sản phẩm</a></li>
+                    <li><a href="blog.html">Bài viết</a></li>
                     <li><a href="">Liên hệ</a></li>
                 </ul>
                 <ul class="cart_site ic">
@@ -79,11 +78,7 @@
                     <i class="ri-arrow-down-s-line"></i>
                 </div>
                 <ul class="list_cate">
-                    <li><a href="">hi</a></li>
-                    <li><a href="">hi</a></li>
-                    <li><a href="">hi</a></li>
-                    <li><a href="">hi</a></li>
-                    <li><a href="">hi</a></li>
+
                 </ul>
             </div>
             <div class="">
@@ -110,127 +105,92 @@
         <div class="container">
             <ul>
                 <li>
-                    <a href="">Trang chu</a>
+                    <a href="index.html">Trang chủ</a>
                     <span> <i class="fa fa-angle-right"></i> </span>
                 </li>
                 <li>
-                    <a href="">Trang chu</a>
+                    <a href="product.html">Trái cây</a>
                     <span> <i class="fa fa-angle-right"></i> </span>
+                </li>
+                <li>
+                    <a href="product.html">Táo bom</a>
                 </li>
             </ul>
         </div>
     </div>
 
-    <section class="detail">
-        <div class="container side_pad">
-            <div class="detail_row">
-                <div class="detail_col">
-                    <div class="main_pic">
-                        <img src="./images/product-details-1.jpg" alt="Product">
-                    </div>
-                    <div class="small_pics">
-                        <div class="pic_col">
-                            <img src="./images/product-details-1.jpg" alt="Product">
-                        </div>
-                        <div class="pic_col">
-                            <img src="./images/product-details-1.jpg" alt="Product">
-                        </div>
-                        <div class="pic_col">
-                            <img src="./images/product-details-1.jpg" alt="Product">
-                        </div>
-                        <div class="pic_col">
-                            <img src="./images/product-details-1.jpg" alt="Product">
-                        </div>
-                    </div>
+    <section class="products">
+        <div class="container">
+            <div class="side_bar side_pad">
+                <div class="search">
+                    <i class="ri-search-line"></i>
+                    <input type="text" placeholder="Tim gi do ..." name="" id="">
                 </div>
-                <div class="detail_col">
-                    <div class="product_details_text">
-                        <h3>Vetgetable’s Package</h3>
-                        <div class="product_details_price">$50.00</div>
-                        <p>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam
-                            vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Vestibulum ac diam sit amet
-                            quam vehicula elementum sed sit amet dui. Proin eget tortor risus.</p>
-                        <div class="product_details_quantity">
-                            <div class="quantity">
-                                <div class="pro_qty"><span class="dec qtybtn">-</span>
-                                    <input type="text" value="1">
-                                    <span class="inc qtybtn">+</span>
-                                </div>
-                            </div>
-                        </div>
-                        <a href="#" class="primary_btn">+ GIỎ HÀNG</a>
-                        <a href="#" class="primary_btn">MUA NGAY</a>
-                        <a href="#" class="heart_icon"><span class="icon_heart_alt"><i class="fa fa-heart-o"
-                                    aria-hidden="true"></i></span></a>
-                    </div>
+                <div class="price filter_side">
+                    <h3>Giá sản phẩm</h3>
+                    <ul class="list_price">
+                        <li>
+                            <input type="checkbox" name="under500" id="under500">
+                            <label for="under500">Dưới 20.000₫</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="under500" id="under500">
+                            <label for="under500">20.000₫ - 50.000₫</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="under500" id="under500">
+                            <label for="under500">50.000₫ - 200.000₫</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="under500" id="under500">
+                            <label for="under500">Trên 200.000₫</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="discount filter_side">
+                    <h3>Giảm giá</h3>
+                    <ul class="list_discount">
+                        <li>
+                            <input type="checkbox" name="under500" id="under500">
+                            <label for="under500">Dưới 10%</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="under500" id="under500">
+                            <label for="under500">10% - 20%</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="under500" id="under500">
+                            <label for="under500">20% - 50%</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" name="under500" id="under500">
+                            <label for="under500">Trên 50%</label>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
+            <div class="row_products side_pad">
+                <div class="filter">
+                    <span class="total_results">
+                        0 Kết quả
+                    </span>
+                    <span>Lọc theo</span>
+                    <select>
+                        <option value="all">
+                            <b>Tất cả</b> <i class="fa fa-angle-down" aria-hidden="true"></i>
+                        </option>
+                        <option value="inc">Giá tăng dần</option>
+                        <option value="dec">Giá giảm dần</option>
+                    </select>
+                </div>
+                <div class="list_prod">
 
-    <section class="related_product">
-        <div class="container">
-            <h2>Sản phẩm liên quan</h2>
-            <div class="list_prod">
-                <div class="item_col">
-                    <div class="item">
-                        <div class="item_pic">
-                            <ul class="item_pic_hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="item_text">
-                            <h6><a href="#">Cam ngon</a></h6>
-                            <h5>$30.00</h5>
-                        </div>
-                    </div>
                 </div>
-                <div class="item_col">
-                    <div class="item">
-                        <div class="item_pic">
-                            <ul class="item_pic_hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="item_text">
-                            <h6><a href="#">Cam ngon</a></h6>
-                            <h5>$30.00</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="item_col">
-                    <div class="item">
-                        <div class="item_pic">
-                            <ul class="item_pic_hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="item_text">
-                            <h6><a href="#">Cam ngon</a></h6>
-                            <h5>$30.00</h5>
-                        </div>
-                    </div>
-                </div>
-                <div class="item_col">
-                    <div class="item">
-                        <div class="item_pic">
-                            <ul class="item_pic_hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                            </ul>
-                        </div>
-                        <div class="item_text">
-                            <h6><a href="#">Cam ngon</a></h6>
-                            <h5>$30.00</h5>
-                        </div>
-                    </div>
+                <div class="product_pagination">
+                    <a href="#">1</a>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#"><i class="fa fa-long-arrow-right"></i></a>
                 </div>
             </div>
         </div>
