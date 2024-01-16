@@ -5,10 +5,11 @@
       "category": "Trái cây",
       "name": "Táo kẹo candine organic Pháp",
       "price": 79500,
-      "orgPrice": 1000000,
+      "orgPrice": 90000,
       "quantity": 100,
       "likes": 0,
       "purchased": 0,
+      "mass": "1kg",
       "images": ["taophap1.webp", "taophap2.png"],
       "description": "Nếu táo Fuji “đốn tim” bạn với chất thịt dày ngọt, táo Ariane “mê hoặc” bạn với độ giòn và thơm đặc trưng, thì Candine hữu cơ chính là giống táo có sự giao thoa một cách tinh tế giữa Fuji và Ariane, được thừa hưởng những điểm mạnh của hai loại táo này. Nhờ vậy, Táo Candine Organic có sắc đỏ sáng bóng, thịt táo mọng nước cùng độ giòn ngọt mà chúng ta khó có thể tìm được sự kết hợp đó ở những giống táo khác."
     },
@@ -17,54 +18,156 @@
       "category": "Trái cây",
       "name": "Táo envy New Zealand",
       "price": 124500,
-      "orgPrice": 1000000,
+      "orgPrice": 130000,
       "quantity": 100,
       "likes": 0,
       "purchased": 0,
+      "mass": "1kg",
       "images": ["taoenvy1.webp", "taoenvy2.jpg", "taoenvy3.jpg"],
       "description": "Envy có quả to tròn, với vỏ màu đỏ điểm thêm các sọc màu vàng Envy  mang trong mình vị ngọt tự nhiên, hương thơm quyến rũ cùng vị giòn tan khiến bạn không thể cưỡng lại được. Táo Envy là một loại trái cây nhập khẩu quen thuộc với mọi người. Được biết đến là giống táo thơm ngon bậc nhất thế giới, táo Envy còn rất tốt cho sức khỏe vời nhiều giá trị dinh dưỡng bất ngờ."
     },
     {
       "id": 3,
       "category": "Rau củ",
-      "name": "Táo envy New Zealand",
-      "price": 124500,
-      "orgPrice": 1000000,
+      "name": "Ớt chuông đỏ Organic",
+      "price": 28000,
+      "orgPrice": 35000,
       "quantity": 100,
       "likes": 0,
       "purchased": 0,
-      "images": ["taoenvy1.webp", "taoenvy2.jpg", "taoenvy3.jpg"],
-      "description": "Envy có quả to tròn, với vỏ màu đỏ điểm thêm các sọc màu vàng Envy  mang trong mình vị ngọt tự nhiên, hương thơm quyến rũ cùng vị giòn tan khiến bạn không thể cưỡng lại được. Táo Envy là một loại trái cây nhập khẩu quen thuộc với mọi người. Được biết đến là giống táo thơm ngon bậc nhất thế giới, táo Envy còn rất tốt cho sức khỏe vời nhiều giá trị dinh dưỡng bất ngờ."
+      "mass": "1kg",
+      "images": ["otchuong1.webp", "otchuong2.webp", "otchuong3.webp"],
+      "description": "Ớt Chuông có nhiều màu như xanh, đỏ, cam, vàng, thân tròn như quả chuông, hương thơm, vị rất giòn ngọt, ít hăng. CÔNG DỤNG • Ớt Chuông giàu Vitamin A, K, C, Kali, Magne, chất khoáng và chất xơ. Hổ trợ tiêu hóa, tốt cho mắt, hệ miễn dịch cao, giảm đường và cholesterol trong máu. Kích thích tuần hoàn máu, ngăn ngừa lão hóa. • Ngoài việc kích thích ngon miệng, nó còn bổ sung canxi và ngăn chặn ung thư khá cao. CÁCH SỬ DỤNG • Trộn salát, ăn tươi sống hoặc xào."
     },
     {
       "id": 4,
-      "category": "Thịt",
-      "name": "Táo envy New Zealand",
-      "price": 124500,
-      "orgPrice": 1000000,
+      "category": "Rau củ",
+      "name": "Cải bó xôi Organic",
+      "price": 68000,
+      "orgPrice": 75000,
       "quantity": 100,
       "likes": 0,
       "purchased": 0,
-      "images": ["taoenvy1.webp", "taoenvy2.jpg", "taoenvy3.jpg"],
-      "description": "Envy có quả to tròn, với vỏ màu đỏ điểm thêm các sọc màu vàng Envy  mang trong mình vị ngọt tự nhiên, hương thơm quyến rũ cùng vị giòn tan khiến bạn không thể cưỡng lại được. Táo Envy là một loại trái cây nhập khẩu quen thuộc với mọi người. Được biết đến là giống táo thơm ngon bậc nhất thế giới, táo Envy còn rất tốt cho sức khỏe vời nhiều giá trị dinh dưỡng bất ngờ."
+      "mass": "1kg",
+      "images": ["caiboxoi1.webp", "caiboxoi2.webp", "caiboxoi3.png"],
+      "description": "Cải bó xôi còn có tên là rau bina, rau chân vịt, là loại rau được trồng phổ biến ở nước ta. Đây là loại rau thường được sử dụng trong chế biến món ăn hoặc ép nước để uống và có giá trị dinh dưỡng cao. Rau bina được xem như là một 'siêu thực phẩm' nhờ có nguồn vitamin và khoáng chất tuyệt vời đối với sức khỏe."
+    },
+    {
+      "id": 5,
+      "category": "Rau củ",
+      "name": "Rau cần tây Organic",
+      "price": 55000,
+      "orgPrice": 65000,
+      "quantity": 100,
+      "likes": 0,
+      "purchased": 0,
+      "mass": "1kg",
+      "images": ["cantay1.webp", "cantay2.jpg", "cantay3.jpg"],
+      "description": "Cải bó xôi còn có tên là rau bina, rau chân vịt, là loại rau được trồng phổ biến ở nước ta. Đây là loại rau thường được sử dụng trong chế biến món ăn hoặc ép nước để uống và có giá trị dinh dưỡng cao. Rau bina được xem như là một 'siêu thực phẩm' nhờ có nguồn vitamin và khoáng chất tuyệt vời đối với sức khỏe."
+    },
+    {
+      "id": 6,
+      "category": "Thịt, cá, hải sản",
+      "name": "Móng giò Karst Premium",
+      "price": 159000,
+      "orgPrice": 170000,
+      "quantity": 100,
+      "likes": 0,
+      "purchased": 0,
+      "mass": "1kg",
+      "images": [
+        "monggio1.jpg",
+        "monggio2.png",
+        "monggio3.png",
+        "monggio4.png"
+      ],
+      "description": "Thức ăn của heo, gà là cám gạo, bột cá biển trộn với rau cắt nhỏ (rau lang, rau muống, chuối tự trồng và đặc biệt bổ sung tảo xoắn). Tất cả nguyên liệu được ủ cùng men vi sinh Probiotic trong 24 giờ. Hằng ngày, heo và gà trong chăn trại được chăn thả tự do với nguồn thức ăn khép kín và đồng thời được uống bổ sung men vi sinh Probiotic để tăng cường đề kháng và phòng dịch bệnh triệt để."
+    },
+    {
+      "id": 7,
+      "category": "Thịt, cá, hải sản",
+      "name": "Sườn non Karst Premium",
+      "price": 220000,
+      "orgPrice": 235000,
+      "quantity": 100,
+      "likes": 0,
+      "purchased": 0,
+      "mass": "500g",
+      "images": [
+        "suonnon1.jpg",
+        "suonnon2.png",
+        "suonnon3.png",
+        "suonnon4.png"
+      ],
+      "description": "Thức ăn của heo, gà là cám gạo, bột cá biển trộn với rau cắt nhỏ (rau lang, rau muống, chuối tự trồng và đặc biệt bổ sung tảo xoắn). Tất cả nguyên liệu được ủ cùng men vi sinh Probiotic trong 24 giờ. Hằng ngày, heo và gà trong chăn trại được chăn thả tự do với nguồn thức ăn khép kín và đồng thời được uống bổ sung men vi sinh Probiotic để tăng cường đề kháng và phòng dịch bệnh triệt để."
+    },
+    {
+      "id": 8,
+      "category": "Ngũ cốc, đậu, hạt",
+      "name": "Ngũ cốc giòn Muesli mix trái cây hữu cơ",
+      "price": 220000,
+      "orgPrice": 235000,
+      "quantity": 100,
+      "likes": 0,
+      "purchased": 0,
+      "mass": "350g",
+      "images": ["ngucoc1.png", "ngucoc2.png", "ngucoc3.png"],
+      "description": "Thức ăn của heo, gà là cám gạo, bột cá biển trộn với rau cắt nhỏ (rau lang, rau muống, chuối tự trồng và đặc biệt bổ sung tảo xoắn). Tất cả nguyên liệu được ủ cùng men vi sinh Probiotic trong 24 giờ. Hằng ngày, heo và gà trong chăn trại được chăn thả tự do với nguồn thức ăn khép kín và đồng thời được uống bổ sung men vi sinh Probiotic để tăng cường đề kháng và phòng dịch bệnh triệt để."
+    },
+    {
+      "id": 9,
+      "category": "Thức uống",
+      "name": "Sữa yến mạch cacao hữu cơ Riso Scotti",
+      "price": 110000,
+      "orgPrice": 115000,
+      "quantity": 100,
+      "likes": 0,
+      "purchased": 0,
+      "mass": "1 lít",
+      "images": ["suaym1.jpg", "suaym2.jpg"],
+      "description": "Thành phần: Nước, yến mạch hữu cơ (16%), bột cacao hữu cơ (1,5%), siro agave hữu cơ (1,5%) dầu hoa hướng dương, tảo biển đỏ Lithothamnium, chất ổn định carrageenan, xanthan, gum), muối. Sản phẩm có chứa Gluten."
+    },
+    {
+      "id": 10,
+      "category": "Sản phẩm chế biến",
+      "name": "Bánh mì cuộn Finger hữu cơ",
+      "price": 80000,
+      "orgPrice": 82000,
+      "quantity": 100,
+      "likes": 0,
+      "purchased": 0,
+      "mass": "1 cái",
+      "images": ["banhmi1.png", "banhmi2.png", "banhmi3.png"],
+      "description": "Bột mì hữu cơ, nước, men, bột lúa mạch đen hữu cơ nướng, bột lúa mạch đen hữu cơ (1,9%), muối ăn không iốt, hạt lanh hữu cơ (1,8%), bột đậu nành hữu cơ (1,6%), cám lúa mì hữu cơ, lúa mì hữu cơ gluten, bột ngô hữu cơ, bột mì mạch nha hữu cơ, hạt caraway hữu cơ, rau mùi hữu cơ, thì là hữu cơ, chất ổn định: guar gum."
     }
   ],
   "blogs": [
     {
-      "thumbnail": "blog-1.jpg",
-      "createAt": "2023-12-22T00:00:00.000Z",
-      "comments": 10,
-      "title": "Cooking tips make cooking simple",
-      "category": "Sức khỏe",
-      "contents": "Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat"
+      "id": 1,
+      "thumbnail": "blog1.webp",
+      "createAt": "2023-11-22T00:00:00.000Z",
+      "comments": 13,
+      "title": "Bí quyết ăn kiêng bằng bánh mì của phụ nữ Pháp",
+      "category": "Giữ dáng",
+      "contents": "Nếu đang bước đầu 'làm quen' với việc giảm cân và kiểm soát khẩu phần ăn thì bánh mì là lựa chọn hàng đầu dành cho bạn. Đơn giản là vì lượng calorie có trong bánh mì ít hơn lượng calorie bạn cần tiêu thụ mỗi ngày. Nghiên cứu cho thấy bánh mì làm từ bột mì trắng, bột tinh chế có thể gây tăng cân và béo bụng nhưng bánh mì nguyên hạt thực sự có thể giúp giảm cân."
     },
     {
-      "thumbnail": "blog-1.jpg",
-      "createAt": "2023-12-22T00:00:00.000Z",
+      "id": 2,
+      "thumbnail": "blog2.png",
+      "createAt": "2024-01-02T17:00:00.000Z",
       "comments": 10,
-      "category": "Giữ dáng",
-      "title": "Cooking tips make cooking simple",
-      "contents": "Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat"
+      "category": "Sức khỏe",
+      "title": "Ăn rau củ quả như thế nào là đủ?",
+      "contents": "Theo thông tin từ Viện Dinh dưỡng quốc gia, người Việt đang ăn thịt nhiều gấp đôi so với mức khuyến nghị. Cụ thể, trung bình một người tiêu thụ 134 gram thịt/ngày, trong khi con số Tổ chức Phòng chống Ung thư Thế giới đưa ra không vượt quá 70 gram/ngày. Đáng chú ý là song song với tiêu thụ thừa thịt, người Việt còn đang có xu hướng… ngại ăn rau."
+    },
+    {
+      "id": 3,
+      "thumbnail": "blog3.jpg",
+      "createAt": "2024-03-01T00:00:00.000Z",
+      "comments": 10,
+      "category": "Kiến thức",
+      "title": "Rau sạch là gì và cách để phân biệt với rau bẩn",
+      "contents": "Bữa ăn của người Việt thường đi kèm với nhiều loại rau được chế biến theo nhiều cách khác nhau. Vì thế, khi có những vụ việc làm rau bẩn làm giả rau sạch, người tiêu dùng rất bức xúc và hoang mang. Trong bài viết này, Prudential sẽ giúp người tiêu dùng hiểu rõ hơn về rau sạch và rau bẩn cũng như đưa ra các mẹo để phân biệt rau."
     }
   ]
 }

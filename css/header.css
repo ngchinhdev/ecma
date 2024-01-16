@@ -291,11 +291,13 @@ div.navigation_bar ul {
 }
 
 div.navigation_bar ul li {
-    padding-right: .5rem;
+    display: flex;
+    align-items: center;
 }
 
 div.navigation_bar ul li i {
-    padding-left: .5rem;
+    padding-left: .8rem;
+    padding-right: .8rem;
     font-size: 1.2rem;
     vertical-align: middle;
 }

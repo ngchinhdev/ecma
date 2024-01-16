@@ -159,11 +159,11 @@ section.hot_product .item_col {
     width: 100%;
     padding-right: 15px;
     padding-left: 15px;
+    margin-bottom: 2rem;
 }
 
 section.hot_product .item {
     width: 100%;
-    margin-bottom: 2.5rem;
     padding: 1rem;
     box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
     border-radius: 6px;
@@ -295,6 +295,12 @@ section.hot_product .item_text p .fa {
     padding-right: 6px;
 }
 
+section.hot_product .item_text .mass {
+    color: #353535;
+    font-weight: 500;
+    font-size: .9rem;
+}
+
 section.banners .container {
     justify-content: space-between;
 }
@@ -315,6 +321,16 @@ section.blog .blog_col {
     padding-right: 15px;
     padding-left: 15px;
     max-width: 33.333333%;
+}
+
+section.blog .blog_row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+section.blog .blog_pic img {
+    width: 100%;
+    aspect-ratio: 1.5/1;
 }
 
 section.blog .blog_text {
@@ -348,6 +364,12 @@ section.blog .blog_text h5 {
 section.blog .blog_text p {
     margin-bottom: 25px;
     font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 section.blog .blog_text .fa-calendar-o {

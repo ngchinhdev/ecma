@@ -11,7 +11,7 @@ async function init() {
     totalResultLabel.innerText = `${totalResults.length} Kết quả`;
 }
 
+await generateProducts(shopProductContainer);
+
 init();
 addToCart();
-
-generateProducts(shopProductContainer);

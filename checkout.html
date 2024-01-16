@@ -13,7 +13,7 @@
     <title>Trai thanh long co trong mi tom</title>
 
     <script defer type="module" src="js/common.js"></script>
-    <script defer src="js/index.js"></script>
+    <script defer src="js/checkout.js"></script>
 </head>
 <body>
     <header>
@@ -47,10 +47,10 @@
                     <img src="./images/logo.png" alt="Logo">
                 </a>
                 <ul class="nav ic">
-                    <li class="active"><a href="">Trang chủ</a></li>
-                    <li><a href="">Cửa hàng</a></li>
-                    <li><a href="">Sản phẩm</a></li>
-                    <li><a href="">Bài viết</a></li>
+                    <li><a href="index.html">Trang chủ</a></li>
+                    <li><a href="shop.html">Cửa hàng</a></li>
+                    <li><a href="product.html?cate=Trái cây">Sản phẩm</a></li>
+                    <li><a href="blog.html">Bài viết</a></li>
                     <li><a href="">Liên hệ</a></li>
                 </ul>
                 <ul class="cart_site ic">
@@ -115,7 +115,6 @@
                 </li>
                 <li>
                     <a href="cart.html">Thanh toán</a>
-                    <span> <i class="fa fa-angle-right"></i> </span>
                 </li>
             </ul>
         </div>
@@ -217,8 +216,6 @@
                         </select>
                         <small class="error"></small>
                     </div>
-
-
                     <h5>Ghi chú đơn hàng (Tùy chọn)</h5>
                     <textarea placeholder="Ví dụ: thời gian hay chỉ dẫn địa điểm giao hàng chi tiết hơn." name=""
                         id=""></textarea>
@@ -230,26 +227,25 @@
                             <tr>
                                 <td class="">
                                     <div class="img-prod">
-                                        <img src="../../public/assets/imgs/'.$data[$key]['image_url'].'" alt="">
+                                        <img src="./images/products/taoenvy1.webp" alt="">
                                     </div>
                                 </td>
                                 <td class="mid">
                                     <div class="name-prod">
-                                        '.$data[$key]['name'].'
+                                        Táo kẹo candine organic Pháp
                                     </div>
                                 </td>
                                 <td class="">
                                     <div class="quantity-prod">
-                                        x <span>'.$data[$key]['quantity'].'</span>
+                                        x <span>2</span>
                                     </div>
                                 </td>
                                 <td class="">
                                     <div class="price-prod">
-                                        '.formatPrice($price * $promotion).'
+                                        79.500 ₫
                                     </div>
                                 </td>
-                            </tr>';
-                            }?>
+                            </tr>
                         </table>
                     </div>
                     <div class="sum">

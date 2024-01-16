@@ -1,12 +1,12 @@
 import { updateQuantityCartHeader } from "./updateHeader.js";
 
-export function addToCart() {
-    document.querySelector('.list_prod').addEventListener('click', function (e) {
-        e.preventDefault();
-
+export function addToCart(clickItem = '.list_prod') {
+    document.querySelector(clickItem).addEventListener('click', function (e) {
         const addCartBtn = e.target;
 
         if (!addCartBtn.hasAttribute('data-id')) return;
+
+        e.preventDefault();
 
         const curId = +addCartBtn.dataset.id;
 
@@ -31,9 +31,8 @@ export function addToCart() {
             cart.push(newItem);
         }
 
-        updateQuantityCartHeader();
-
         localStorage.setItem('cart', JSON.stringify(cart));
-        console.log(localStorage.getItem('cart') || []);
+
+        updateQuantityCartHeader();
     });
 }

@@ -12,7 +12,7 @@ export async function generateMenuCategories() {
     let markup = '';
 
     categories.map(category => {
-        markup += `<li><a href="product.html?query=${category.name}">${category.name}</a></li>`;
+        markup += `<li><a href="product.html?cate=${category.name}">${category.name}</a></li>`;
     });
 
     menuCategory.insertAdjacentHTML('beforeend', markup);
@@ -26,12 +26,12 @@ export async function generateHighlightCategories() {
 
     let markup = '';
 
-    categories.map(category => {
+    categories.slice(0, 4).map(category => {
         markup += `<div class="item_col">
                         <div class="item">
                             <img src="./images/products/${category.image}" alt="${category.name}">
                             <h5>
-                                <a href="#">${category.name}</a>
+                                <a href="product.html?cate=${category.name}">${category.name}</a>
                             </h5>
                         </div>
                     </div>`;

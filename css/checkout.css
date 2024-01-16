@@ -161,13 +161,13 @@ small.error {
 }
 
 #form_wrap .main_form>.boxx input.success {
-    border: rgb(9, 176, 213) 1px solid;
-    outline: rgb(12, 142, 165) solid 0.5px;
+    border: var(--primary-color) 1px solid;
+    outline: var(--primary-color) solid 0.5px;
 }
 
 #form_wrap .main_form>.boxx select.success {
-    border: rgb(9, 176, 213) 1px solid;
-    outline: rgb(12, 142, 165) solid 0.5px;
+    border: var(--primary-color) 1px solid;
+    outline: var(--primary-color) solid 0.5px;
 }
 
 #form_wrap .main_form>.boxx select.error {

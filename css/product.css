@@ -132,6 +132,12 @@ section.products .item_pic_hover {
     transition: all, 0.4s;
 }
 
+section.products .item_text .mass {
+    color: #353535;
+    font-weight: 500;
+    font-size: .9rem;
+}
+
 section.products select,
 section.products option {
     border: solid 1px #d2d2d2;
