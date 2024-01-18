@@ -60,6 +60,7 @@ section.products .side_bar .filter_side input {
     border: 1px solid #d9d9d9;
     border-radius: 8px;
     height: 20px;
+    cursor: pointer;
 }
 
 section.products .row_products {

@@ -184,12 +184,8 @@ small.error {
     width: 100%;
 }
 
-#form_wrap .row_prod tr {
-    padding-bottom: 20px;
-    display: block;
-}
-
 #form_wrap .row_prod td {
+    padding-bottom: 20px;
     text-align: center;
 }
 
@@ -220,4 +216,37 @@ small.error {
 #form_wrap .row_prod .img-prod img {
     width: 50px;
     height: 50px;
+}
+
+/* Success  */
+section.success_page {
+    padding-top: 60px;
+    padding-bottom: 80px;
+    text-align: center;
+
+}
+
+section.success_page p i {
+    color: var(--primary-color);
+    font-size: 8rem;
+}
+
+section.success_page p strong {
+    padding: 1rem 0;
+    font-size: 2rem;
+    display: inline-block;
+}
+
+section.success_page a {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 10px 16px;
+    color: white;
+    background-color: var(--primary-color);
+    font-size: .9rem;
+    border-radius: 6px;
+}
+
+section.success_page a i {
+    margin-right: .8rem;
 }

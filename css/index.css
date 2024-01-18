@@ -163,6 +163,7 @@ section.hot_product .item_col {
 }
 
 section.hot_product .item {
+    height: 100%;
     width: 100%;
     padding: 1rem;
     box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;

@@ -1,7 +1,3 @@
-// Display sum monney must pay
-const sumMoneyMustPay = sessionStorage.getItem("sumMoneyMustPay");
-document.querySelector(".sum span").innerText = sumMoneyMustPay;
-
 const inputs = document.querySelectorAll(".boxx input");
 const selectBox = document.querySelector(".provinces");
 const fullName = document.querySelector(".name");
@@ -30,37 +26,66 @@ function isSuccess(input) {
 }
 
 function checkName(input) {
+    let isEmty = true;
     let nameReg = /-?\d+/;
-    if (nameReg.test(input.value.trim())) {
+    if (input.value === '') {
+        isError(input, 'Vui lòng nhập tên!');
+        return false;
+    } else if (nameReg.test(input.value.trim())) {
+        isEmty = false;
         isError(input, "Tên không hợp lệ!");
     } else {
         isSuccess(input);
     }
+    return isEmty;
 }
 
 function checkPhoneNumber(input) {
+    let isEmty = true;
     let phoneNumReg = /^0\d{9}$/;
-    if (!phoneNumReg.test(input.value)) {
+    if (input.value === '') {
+        isError(input, 'Vui lòng nhập số điện thoại!');
+        return false;
+    } else if (!phoneNumReg.test(input.value)) {
         isError(input, "Số điện thoại không hợp lệ!");
+        isEmty = false;
     } else {
         isSuccess(input);
     }
+    return isEmty;
 }
 
 function checkEmail(input) {
+    let isEmty = true;
     let emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailReg.test(input.value)) {
+    if (input.value === '') {
+        isError(input, 'Vui lòng nhập email!');
+        return false;
+    } else if (!emailReg.test(input.value)) {
         isError(input, "Email không hợp lệ!");
+        isEmty = false;
     } else {
         isSuccess(input);
     }
+    return isEmty;
+}
+
+function checkAddress(input) {
+    let isEmty = true;
+    if (input.value == "") {
+        isError(address, "Vui lòng nhập địa chỉ!");
+        isEmty = false;
+    } else {
+        isSuccess(address);
+    }
+    return isEmty;
 }
 
 function checkProvinces(input) {
-    let isEmty = false;
+    let isEmty = true;
     if (input.value === "Tỉnh / Thành phố") {
         input.classList.add("error");
-        isEmty = true;
+        isEmty = false;
         isError(input, "Vui lòng chọn tỉnh thành!");
     } else {
         input.classList.add("success");
@@ -71,33 +96,14 @@ function checkProvinces(input) {
 
 submitBtn.onclick = function (e) {
     e.preventDefault();
-    let isNameEmpty = fullName.value.trim() === "";
-    let isPhoneNumEmpty = phoneNum.value.trim() === "";
-    let isEmailEmpty = email.value.trim() === "";
-    let isAddressEmty = address.value.trim() === "";
-
-    if (isNameEmpty) {
-        isError(fullName, "Vui lòng nhập tên!");
-    } else {
+    if (!(checkName(fullName) && checkPhoneNumber(phoneNum) && checkEmail(email) &&
+        checkAddress(address) && checkProvinces(provinces))) {
         checkName(fullName);
-    }
-
-    if (isPhoneNumEmpty) {
-        isError(phoneNum, "Vui lòng nhập số điện thoại!");
-    } else {
         checkPhoneNumber(phoneNum);
-    }
-
-    if (isEmailEmpty) {
-        isError(email, "Vui lòng nhập địa chỉ email!");
-    } else {
         checkEmail(email);
-    }
-
-    if (isAddressEmty) {
-        isError(address, "Vui lòng nhập địa chỉ!");
+        checkAddress(address);
+        checkProvinces(provinces);
     } else {
-        isSuccess(address);
+        window.location.href = 'success-payment.html';
     }
-    checkProvinces(provinces);
 };

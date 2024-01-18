@@ -1,6 +1,5 @@
 import { generateMenuCategories } from "./markups/categoriesMarkup.js";
-import { generateProducts } from "./markups/productsMarkup.js";
-import { updateQuantityCartHeader } from "./utils/updateHeader.js";
+import { updateHeader } from "./utils/updateHeader.js";
 
 const barCategory = document.querySelector('.toggle');
 const menuCate = document.querySelector('.list_cate');
@@ -17,11 +16,17 @@ barCategory.addEventListener('click', function () {
 });
 
 function search() {
-    console.log(searchBox.value);
+    if (!searchBox.value) {
+        searchBox.focus();
+        return;
+    }
+
     window.location.href = `product.html?query=${searchBox.value}`;
 }
 
 searchBtn.addEventListener('click', search);
 
-generateMenuCategories();
-updateQuantityCartHeader();
+await generateMenuCategories();
+const paramsUrl = window.location.href;
+if (paramsUrl.includes('index.html')) menuCate.style.maxHeight = menuCate.scrollHeight + 'px';
+updateHeader();

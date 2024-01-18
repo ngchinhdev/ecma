@@ -30,6 +30,10 @@ export async function generateInfoProduct(idProd) {
     const navigationBar = document.querySelector('.navigation_bar ul');
     navigationBar.insertAdjacentHTML('beforeend', `<li>
                                         <span> <i class="fa fa-angle-right"></i> </span>
+                                        <a href="product.html?cate=${category}">${category}</a>
+                                    </li>
+                                    <li>
+                                        <span> <i class="fa fa-angle-right"></i> </span>
                                         <a href="detail.html?id=${id}">${name}</a>
                                     </li>`);
 

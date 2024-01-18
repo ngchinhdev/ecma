@@ -53,6 +53,11 @@ section.blogs .blog_text .cate_blog {
     margin-bottom: 8px;
 }
 
+section.blogs .blog_pic img {
+    width: 100%;
+    aspect-ratio: 1.5/1;
+}
+
 section.blogs .blog_text ul {
     margin-bottom: 10px;
 }
@@ -73,6 +78,12 @@ section.blogs .blog_text h5 {
 section.blogs .blog_text p {
     margin-bottom: 25px;
     font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 section.blogs .blog_text .fa-calendar-o {

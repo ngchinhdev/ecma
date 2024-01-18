@@ -60,6 +60,7 @@ section.shop .side_bar .filter_side input {
     border: 1px solid #d9d9d9;
     border-radius: 8px;
     height: 20px;
+    cursor: pointer;
 }
 
 section.shop .row_products {
@@ -261,6 +262,12 @@ section.shop .product_pagination a {
 }
 
 section.shop .product_pagination a:hover {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #ffffff;
+}
+
+section.shop .product_pagination a.active {
     background: var(--primary-color);
     border-color: var(--primary-color);
     color: #ffffff;

@@ -2,54 +2,48 @@ import { getProducts } from "../api/getProducts.js";
 import { formatPrice } from "../utils/formatPrice.js";
 import { loader } from "../utils/loader.js";
 
-function noResult(container, message) {
+export function noResult(container, message) {
     container.innerHTML = '';
     container.insertAdjacentHTML('beforeend', `<div class="empty_prods">${message}</div>`);
 }
 
-function removeDiacritics(str) {
-    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+export function generatePagination(container, totalPages, curPage) {
+    let markup = '';
+
+    for (let i = 0; i < totalPages; i++) {
+        markup += `<a href="#" data-page=${i} class=${curPage === i ? 'active' : ''}>${i + 1}</a>`;
+    }
+
+    container.innerHTML = '';
+    container.insertAdjacentHTML('beforeend', markup);
 }
 
-export async function generateProducts(container, query = 'all', isSearch = false) {
+export async function generateProducts(container, filteredProducts) {
     container.innerHTML = '';
     await loader(container, 1000);
 
-    const products = await getProducts();
+    const orgProducts = await getProducts();
 
-    if (!products.length) {
+    if (!orgProducts.length) {
         noResult(container, 'Không có sản phẩm nào.');
         return;
     }
 
     let markup = '';
-    let newDataProducts = null;
 
-    if (!isSearch) {
-        newDataProducts = products.filter(product => product.category === query);
-    }
+    const totalResults = filteredProducts.length === 0 ? orgProducts.length : filteredProducts.length;
 
-    if (isSearch) {
-        newDataProducts = products.filter(product => removeDiacritics(product.name).toLowerCase().includes(removeDiacritics(query.toLowerCase())));
-
-        if (!newDataProducts.length) {
-            noResult(container, "Không tìm thấy sản phẩm tương ứng.");
-            return;
-        }
-    }
-
-    const totalResults = newDataProducts.length === 0 ? products.length : newDataProducts.length;
-
-    (newDataProducts.length === 0 ? products.slice(0, 8) : newDataProducts).map(product => {
+    (filteredProducts.length === 0 ? orgProducts : filteredProducts).map(product => {
         const { id, category, name, price, orgPrice, likes, purchased, mass, images } = product;
 
         markup += `<div class="item_col">
                     <div class="item">
+                        <span class="sale_ribbon">-${100 - +(price / orgPrice * 100).toFixed(0)}%</span>
                         <div class="item_pic">
                             <img src="./images/products/${images[0]}" alt="${name}">
                             <ul class="item_pic_hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                <li><a href="detail.html?cate=${category}&id=${id}"><i class="fa fa-money" aria-hidden="true"></i></a></li>
+                                <li><a href="detail.html?cate=${category}&id=${id}"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
                                 <li><a href="#" data-id=${id}><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>

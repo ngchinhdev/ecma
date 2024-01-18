@@ -1,7 +1,8 @@
-import { updateQuantityCartHeader } from "./updateHeader.js";
+import { getProducts } from "../api/getProducts.js";
+import { updateHeader } from "./updateHeader.js";
 
-export function addToCart(clickItem = '.list_prod') {
-    document.querySelector(clickItem).addEventListener('click', function (e) {
+export function addToCart(clickItem = '.list_prod', quantity = 1) {
+    document.querySelector(clickItem).addEventListener('click', async function (e) {
         const addCartBtn = e.target;
 
         if (!addCartBtn.hasAttribute('data-id')) return;
@@ -10,6 +11,8 @@ export function addToCart(clickItem = '.list_prod') {
 
         const curId = +addCartBtn.dataset.id;
 
+        const { price } = await getProducts(curId);
+
         const cart = JSON.parse(localStorage.getItem('cart')) || [];
         let itemExists = false;
 
@@ -17,7 +20,7 @@ export function addToCart(clickItem = '.list_prod') {
             const item = cart[i];
 
             if (item.id === curId) {
-                item.quantity++;
+                item.quantity += quantity;
                 itemExists = true;
                 break;
             }
@@ -26,13 +29,14 @@ export function addToCart(clickItem = '.list_prod') {
         if (!itemExists) {
             const newItem = {
                 id: curId,
-                quantity: 1,
+                quantity: quantity,
+                price
             };
             cart.push(newItem);
         }
 
         localStorage.setItem('cart', JSON.stringify(cart));
 
-        updateQuantityCartHeader();
+        updateHeader();
     });
 }

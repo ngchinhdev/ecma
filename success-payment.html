@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/shop.css">
+    <link rel="stylesheet" href="css/checkout.css">
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.0.1/remixicon.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css">
@@ -13,7 +13,7 @@
     <title>Trai thanh long co trong mi tom</title>
 
     <script defer type="module" src="js/common.js"></script>
-    <script defer type="module" src="js/shop.js"></script>
+    <script defer src="js/checkout.js"></script>
 </head>
 <body>
     <header>
@@ -48,7 +48,7 @@
                 </a>
                 <ul class="nav ic">
                     <li><a href="index.html">Trang chủ</a></li>
-                    <li class="active"><a href="shop.html">Cửa hàng</a></li>
+                    <li><a href="shop.html">Cửa hàng</a></li>
                     <li><a href="product.html?cate=Trái cây">Sản phẩm</a></li>
                     <li><a href="blog.html">Bài viết</a></li>
                     <!-- <li><a href="">Liên hệ</a></li> -->
@@ -79,7 +79,11 @@
                     <i class="ri-arrow-down-s-line"></i>
                 </div>
                 <ul class="list_cate">
-
+                    <li><a href="">hi</a></li>
+                    <li><a href="">hi</a></li>
+                    <li><a href="">hi</a></li>
+                    <li><a href="">hi</a></li>
+                    <li><a href="">hi</a></li>
                 </ul>
             </div>
             <div class="">
@@ -110,91 +114,22 @@
                     <span> <i class="fa fa-angle-right"></i> </span>
                 </li>
                 <li>
-                    <a href="shop.html">Cửa hàng</a>
-                    <!-- <span> <i class="fa fa-angle-right"></i> </span> -->
+                    <a href="cart.html">Thanh toán</a>
                 </li>
             </ul>
         </div>
     </div>
 
-    <section class="shop">
+    <section class="success_page">
         <div class="container">
-            <div class="side_bar side_pad">
-                <div class="search">
-                    <i class="ri-search-line"></i>
-                    <input type="text" placeholder="Tim gi do ..." name="" id="">
-                </div>
-                <div class="price filter_side">
-                    <h3>Giá sản phẩm</h3>
-                    <ul class="list_price">
-                        <li>
-                            <input class="price_checkbox" value="['under', '20000']" type="checkbox" name="u20"
-                                id="u20">
-                            <label for="u20">Dưới 20.000₫</label>
-                        </li>
-                        <li>
-                            <input class="price_checkbox" value="['20000', '50000']" type="checkbox" name="20to50"
-                                id="20to50">
-                            <label for="20to50">20.000₫ - 50.000₫</label>
-                        </li>
-                        <li>
-                            <input class="price_checkbox" value="['50000', '200000']" type="checkbox" name="50to200"
-                                id="50to200">
-                            <label for="50to200">50.000₫ - 200.000₫</label>
-                        </li>
-                        <li>
-                            <input class="price_checkbox" value="['above', '200000']" type="checkbox" name="a200"
-                                id="a200">
-                            <label for="a200">Trên 200.000₫</label>
-                        </li>
-                    </ul>
-                </div>
-                <div class="discount filter_side">
-                    <h3>Giảm giá</h3>
-                    <ul class="list_discount">
-                        <li>
-                            <input type="checkbox" name="under500" id="under500">
-                            <label for="under500">Dưới 10%</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" name="under500" id="under500">
-                            <label for="under500">10% - 20%</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" name="under500" id="under500">
-                            <label for="under500">20% - 50%</label>
-                        </li>
-                        <li>
-                            <input type="checkbox" name="under500" id="under500">
-                            <label for="under500">Trên 50%</label>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="row_products side_pad">
-                <div class="filter">
-                    <span class="total_results">
-                        0 Kết quả
-                    </span>
-                    <span>Lọc theo</span>
-                    <select>
-                        <option value="all">
-                            <b>Tất cả</b> <i class="fa fa-angle-down" aria-hidden="true"></i>
-                        </option>
-                        <option value="inc">Giá tăng dần</option>
-                        <option value="dec">Giá giảm dần</option>
-                    </select>
-                </div>
-                <div class="list_prod">
-
-                </div>
-                <div class="product_pagination">
-                    <!-- <a href="#" class="active">1</a>
-                    <a href="#">2</a>
-                    <a href="#">3</a>
-                    <a href="#"><i class="fa fa-long-arrow-right"></i></a> -->
-                </div>
-            </div>
+            <p><i class="fa fa-check-square" aria-hidden="true"></i></p>
+            <p class="thankyou">
+                <strong>Đặt hàng thành công!</strong>
+                <br>
+                <span>Cảm ơn đã sử dụng sản phẩm của chúng tôi!</span>
+            </p>
+            <a href="index.html"><i class="fa fa-caret-left" aria-hidden="true">
+                </i>Về trang chủ</a>
         </div>
     </section>
 

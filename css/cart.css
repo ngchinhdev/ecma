@@ -150,6 +150,30 @@ section.discount_bill .shoping_discount button {
     border: none;
 }
 
+.empty_cart {
+    text-align: center;
+    width: 100%;
+    padding: 80px 0;
+}
+
+.empty_cart img {
+    padding-bottom: 8px;
+}
+
+.empty_cart a {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 10px 16px;
+    color: white;
+    background-color: var(--primary-color);
+    font-size: .9rem;
+    border-radius: 6px;
+}
+
+.empty_cart i {
+    padding-right: 8px;
+}
+
 section.discount_bill .shoping_checkout {
     background: #f5f5f5;
     padding: 30px;
