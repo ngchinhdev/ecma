@@ -45,7 +45,7 @@ async function init() {
     // Generate related products
     const orgProducts = await getProducts();
 
-    const filteredProducts = orgProducts.filter(product => product.category === cateProd);
+    const filteredProducts = orgProducts.filter(product => product.category === cateProd && product.id !== idProd);
 
     await generateProducts(relatedProductContainer, filteredProducts.slice(0, 4));
     addToCart();

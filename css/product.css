@@ -266,3 +266,9 @@ section.products .product_pagination a:hover {
     border-color: var(--primary-color);
     color: #ffffff;
 }
+
+section.products .product_pagination a.active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #ffffff;
+}

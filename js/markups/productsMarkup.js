@@ -19,7 +19,6 @@ export function generatePagination(container, totalPages, curPage) {
 }
 
 export async function generateProducts(container, filteredProducts) {
-    container.innerHTML = '';
     await loader(container, 1000);
 
     const orgProducts = await getProducts();
@@ -35,10 +34,11 @@ export async function generateProducts(container, filteredProducts) {
 
     (filteredProducts.length === 0 ? orgProducts : filteredProducts).map(product => {
         const { id, category, name, price, orgPrice, likes, purchased, mass, images } = product;
+        const discount = 100 - +(price / orgPrice * 100).toFixed(0);
 
         markup += `<div class="item_col">
                     <div class="item">
-                        <span class="sale_ribbon">-${100 - +(price / orgPrice * 100).toFixed(0)}%</span>
+                        <span class="sale_ribbon">${discount > 0 ? `-${discount}%` : ''}</span>
                         <div class="item_pic">
                             <img src="./images/products/${images[0]}" alt="${name}">
                             <ul class="item_pic_hover">

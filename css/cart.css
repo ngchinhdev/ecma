@@ -1,3 +1,7 @@
+.wrapper.hide {
+    display: none;
+}
+
 section.cart table {
     width: 100%;
     text-align: center;

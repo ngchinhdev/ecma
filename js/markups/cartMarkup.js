@@ -2,14 +2,13 @@ import { getData } from "../api/getData.js";
 import { getCart } from "../cart.js";
 import { formatPrice } from "../utils/formatPrice.js";
 
-const cartContainer = document.querySelector('table tbody');
-const cartCart = document.querySelector('.cart');
-const cartBill = document.querySelector('.discount_bill');
+const cartWrapper = document.querySelector('.wrapper');
+const cartTableBodyContainer = document.querySelector('table tbody');
+const cartBillPrice = document.querySelector('.total_bill');
 
 export function emptyCart() {
-    cartCart.innerHTML = '';
-    cartBill.innerHTML = '';
-    cartCart.insertAdjacentHTML('beforeend', `<div class="empty_cart">
+    cartWrapper.innerText = '';
+    cartWrapper.insertAdjacentHTML('beforeend', `<div class="empty_cart">
                                                 <img src="../images/empty-cart.png" />
                                                 <p>Chưa có sản phẩm nào trong giỏ hàng.</p>
                                                 <a href="shop.html">
@@ -57,8 +56,15 @@ export async function generateCart() {
 
     const markup = await Promise.all(promises);
 
-    cartContainer.innerHTML = '';
-    cartContainer.insertAdjacentHTML('beforeend', markup.join(''));
+    cartTableBodyContainer.innerHTML = '';
+    cartTableBodyContainer.insertAdjacentHTML('beforeend', markup.join(''));
 
     return true;
+}
+
+export function updateBillCart() {
+    const cartData = getCart();
+
+    const totalPrice = cartData.reduce((acc, cur) => acc += +cur.price * cur.quantity, 0);
+    cartBillPrice.innerText = formatPrice(totalPrice);
 }

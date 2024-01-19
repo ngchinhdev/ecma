@@ -30,7 +30,7 @@ async function init() {
     const orgProducts = await getProducts();
 
     await generateProducts(hotProductContainer, orgProducts.slice(0, 8));
-    handleNavControl(orgProducts.slice(0, 8));
+    handleNavControl(orgProducts);
     addToCart();
 
     generateBlogs(blogContainer);

@@ -1,5 +1,6 @@
-import { emptyCart, generateCart } from "./markups/cartMarkup.js";
+import { emptyCart, generateCart, updateBillCart } from "./markups/cartMarkup.js";
 import { formatPrice } from "./utils/formatPrice.js";
+import { loader } from "./utils/loader.js";
 import { updateHeader } from "./utils/updateHeader.js";
 
 function setCart(cart) {
@@ -27,6 +28,7 @@ function removeItemCart() {
         document.querySelector(`tbody tr:is(:has(.fa-times[data-id="${deleteId}"]))`).remove();
 
         updateHeader();
+        updateBillCart();
 
         if (!newCart.length) emptyCart();
     });
@@ -44,8 +46,6 @@ function adjustQuantityItem(btn, isInc) {
         item.id === itemId ? { ...item, quantity: isInc ? item.quantity + 1 : item.quantity - 1 } : item
     );
 
-    console.log(newCart);
-
     const trElement = btn.closest('tr');
     const price = +trElement.querySelector('.cart_price').dataset.price;
     const totalLabel = trElement.querySelector('.cart_total');
@@ -55,6 +55,7 @@ function adjustQuantityItem(btn, isInc) {
     inputElement.value = isInc ? currentQuantity + 1 : currentQuantity - 1;
 
     updateHeader();
+    updateBillCart();
 }
 
 function handleClickQuantity() {
@@ -89,6 +90,7 @@ function handleChangeQuantity() {
             setCart(newCart);
 
             updateHeader();
+            updateBillCart();
         }
     });
 }
@@ -101,6 +103,7 @@ async function init() {
     removeItemCart();
     handleClickQuantity();
     handleChangeQuantity();
+    updateBillCart();
 }
 
 init();
