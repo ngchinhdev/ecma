@@ -1,5 +1,6 @@
-import { getProducts } from "./api/getProducts.js";
+import { getProducts } from "./api/apiProducts.js";
 import { generateImagesProduct, generateInfoProduct } from "./markups/detailsMarkup.js";
+import { generateNavigation } from "./markups/navigationMarkup.js";
 import { generateProducts } from "./markups/productsMarkup.js";
 import { addToCart } from "./utils/addToCart.js";
 
@@ -7,7 +8,7 @@ const relatedProductContainer = document.querySelector('.list_prod');
 
 const params = new URLSearchParams(window.location.search);
 const idProd = params.get('id');
-const cateProd = params.get('cate');
+const cateProd = +params.get('cate');
 
 function adjustQuantity(btn) {
     const inputQuantity = document.querySelector('.ip-qtt');
@@ -26,7 +27,6 @@ function handleControl() {
     decBtn.addEventListener('click', () => adjustQuantity('dec'));
     incBtn.addEventListener('click', () => adjustQuantity('inc'));
 
-
     const mainImage = document.querySelector('.main_pic img');
     const smallImages = document.querySelectorAll('.pic_col img');
 
@@ -37,8 +37,10 @@ function handleControl() {
 
 async function init() {
     // Generate details product
+    await generateNavigation(cateProd);
     await generateImagesProduct(idProd);
     await generateInfoProduct(idProd);
+
     addToCart('.add_cart');
     handleControl();
 

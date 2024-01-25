@@ -24,9 +24,11 @@ function search() {
     window.location.href = `product.html?query=${searchBox.value}`;
 }
 
+searchBox.addEventListener('keyup', (e) => e.key !== 'Enter' ? null : search());
 searchBtn.addEventListener('click', search);
 
 await generateMenuCategories();
 const paramsUrl = window.location.href;
 if (paramsUrl.includes('index.html')) menuCate.style.maxHeight = menuCate.scrollHeight + 'px';
 updateHeader();
+if (paramsUrl.includes('query')) searchBox.value = paramsUrl.slice(paramsUrl.indexOf('=') + 1);

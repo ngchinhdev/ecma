@@ -1,4 +1,4 @@
-import { getProducts } from "../api/getProducts.js";
+import { getProducts } from "../api/apiProducts.js";
 import { formatPrice } from "../utils/formatPrice.js";
 
 const imagesContainer = document.querySelector('.detail_images');
@@ -25,19 +25,15 @@ export async function generateImagesProduct(idProd) {
 export async function generateInfoProduct(idProd) {
     const product = await getProducts(idProd);
 
-    const { id, category, name, price, orgPrice, quantity, likes, purchased, mass, images, description } = product;
+    const { id, name, price, orgPrice, quantity, likes, purchased, mass, images, description } = product;
 
     const navigationBar = document.querySelector('.navigation_bar ul');
     navigationBar.insertAdjacentHTML('beforeend', `<li>
                                         <span> <i class="fa fa-angle-right"></i> </span>
-                                        <a href="product.html?cate=${category}">${category}</a>
-                                    </li>
-                                    <li>
-                                        <span> <i class="fa fa-angle-right"></i> </span>
                                         <a href="detail.html?id=${id}">${name}</a>
                                     </li>`);
 
-    const informationMarkup = `<p class="cate">${category}</p>
+    const informationMarkup = `
                             <h3>${name}</h3>
                             <div class="product_details_price">
                                 <del>${formatPrice(orgPrice)}</del>

@@ -1,8 +1,45 @@
 {
+  "categoriesProduct": [
+    {
+      "id": 1,
+      "name": "Trái cây",
+      "image": "taophap1.webp"
+    },
+    {
+      "id": 2,
+      "name": "Rau củ",
+      "image": "caiboxoi1.webp"
+    },
+    {
+      "id": 3,
+      "name": "Thịt cá hải sản",
+      "image": "monggio1.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Ngũ cốc, đậu, hạt",
+      "image": "ngucoc1.png"
+    },
+    {
+      "id": 5,
+      "name": "Thức uống",
+      "image": "suaym1.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Sản phẩm chế biến",
+      "image": "banhmi1.png"
+    },
+    {
+      "id": 7,
+      "name": "Gia vị",
+      "image": "sotca1.jpg"
+    }
+  ],
   "products": [
     {
       "id": 1,
-      "category": "Trái cây",
+      "category": 1,
       "name": "Táo kẹo candine organic Pháp",
       "price": 79500,
       "orgPrice": 90000,
@@ -15,7 +52,7 @@
     },
     {
       "id": 2,
-      "category": "Trái cây",
+      "category": 1,
       "name": "Táo envy New Zealand",
       "price": 124500,
       "orgPrice": 130000,
@@ -28,7 +65,7 @@
     },
     {
       "id": 3,
-      "category": "Rau củ",
+      "category": 2,
       "name": "Ớt chuông đỏ Organic",
       "price": 28000,
       "orgPrice": 35000,
@@ -41,7 +78,7 @@
     },
     {
       "id": 4,
-      "category": "Rau củ",
+      "category": 2,
       "name": "Cải bó xôi Organic",
       "price": 68000,
       "orgPrice": 75000,
@@ -54,7 +91,7 @@
     },
     {
       "id": 5,
-      "category": "Rau củ",
+      "category": 2,
       "name": "Rau cần tây Organic",
       "price": 55000,
       "orgPrice": 65000,
@@ -67,7 +104,7 @@
     },
     {
       "id": 6,
-      "category": "Thịt, cá, hải sản",
+      "category": 3,
       "name": "Móng giò Karst Premium",
       "price": 159000,
       "orgPrice": 170000,
@@ -85,7 +122,7 @@
     },
     {
       "id": 7,
-      "category": "Thịt, cá, hải sản",
+      "category": 3,
       "name": "Sườn non Karst Premium",
       "price": 220000,
       "orgPrice": 235000,
@@ -103,7 +140,7 @@
     },
     {
       "id": 8,
-      "category": "Ngũ cốc, đậu, hạt",
+      "category": 4,
       "name": "Ngũ cốc giòn Muesli mix trái cây hữu cơ",
       "price": 220000,
       "orgPrice": 235000,
@@ -116,7 +153,7 @@
     },
     {
       "id": 9,
-      "category": "Thức uống",
+      "category": 5,
       "name": "Sữa yến mạch cacao hữu cơ Riso Scotti",
       "price": 110000,
       "orgPrice": 115000,
@@ -129,7 +166,7 @@
     },
     {
       "id": 10,
-      "category": "Sản phẩm chế biến",
+      "category": 6,
       "name": "Bánh mì cuộn Finger hữu cơ",
       "price": 70000,
       "orgPrice": 82000,
@@ -142,7 +179,7 @@
     },
     {
       "id": 11,
-      "category": "Ngũ cốc, đậu, hạt",
+      "category": 4,
       "name": "Ngũ cốc Granola 10% yến mạch, 90% hạt",
       "price": 140000,
       "orgPrice": 145000,
@@ -155,7 +192,7 @@
     },
     {
       "id": 12,
-      "category": "Gia vị",
+      "category": 7,
       "name": "Muối biển siêu sạch Byodo",
       "price": 175000,
       "orgPrice": 188000,
@@ -168,7 +205,7 @@
     },
     {
       "id": 13,
-      "category": "Gia vị",
+      "category": 7,
       "name": "Dầu quả bơ ép thô hữu cơ (RAW) IL Nutrimento",
       "price": 455000,
       "orgPrice": 460000,
@@ -181,7 +218,7 @@
     },
     {
       "id": 14,
-      "category": "Gia vị",
+      "category": 7,
       "name": "Sốt cà chua Ý hữu cơ Sottolestelle",
       "price": 95000,
       "orgPrice": 97000,
@@ -194,7 +231,7 @@
     },
     {
       "id": 15,
-      "category": "Trái cây",
+      "category": 1,
       "name": "Bơ 034 canh tác hữu cơ",
       "price": 107000,
       "orgPrice": 110000,
@@ -207,7 +244,7 @@
     },
     {
       "id": 16,
-      "category": "Trái cây",
+      "category": 1,
       "name": "Cam sành vĩnh long",
       "price": 50000,
       "orgPrice": 52000,
@@ -219,6 +256,20 @@
       "description": "Vitamin C bảo vệ cơ thể bằng rất nhiều cách, chủ yếu qua các chức năng như chống oxy hóa, tổng hợp collagen, hệ tim mạch, hệ miễn dịch..… Nguồn vitamin C có nhiều trong các loại trái cây như cam, quýt, ổi xanh, dâu tây, cà chua, khoai lang, khoai tây, bông cải xanh, ớt xanh. Ai cũng biết cam là loại quả ngon và cung cấp một lượng vitamin C phong phú được các bà nội trợ tin dùng. Tuy nhiên, cam còn là một vị thuốc chữa bệnh tuyệt vời. Người ta tính ra trong mỗi 100 gram quả cam có chứa 88,8 g nước, 585 microgram carotene – một loại vitamin chống oxy hóa, 40 mg vitamin C, 108 mg kali, 34 mg canxi. Ngoài ra, với trọng lượng cam tương tự còn có chứa 1,4 g chất xơ,23 mg photpho, 0,4 mg sắt và giá trị năng lượng là 37 Kcal."
     }
   ],
+  "categoriesBlog": [
+    {
+      "id": 1,
+      "name": "Giữ dáng"
+    },
+    {
+      "id": 2,
+      "name": "Sức khỏe"
+    },
+    {
+      "id": 3,
+      "name": "Kiến thức"
+    }
+  ],
   "blogs": [
     {
       "id": 1,
@@ -226,7 +277,7 @@
       "createAt": "2023-11-22T00:00:00.000Z",
       "comments": 13,
       "title": "Bí quyết ăn kiêng bằng bánh mì của phụ nữ Pháp",
-      "category": "Giữ dáng",
+      "category": 1,
       "contents": "Nếu đang bước đầu 'làm quen' với việc giảm cân và kiểm soát khẩu phần ăn thì bánh mì là lựa chọn hàng đầu dành cho bạn. Đơn giản là vì lượng calorie có trong bánh mì ít hơn lượng calorie bạn cần tiêu thụ mỗi ngày. Nghiên cứu cho thấy bánh mì làm từ bột mì trắng, bột tinh chế có thể gây tăng cân và béo bụng nhưng bánh mì nguyên hạt thực sự có thể giúp giảm cân."
     },
     {
@@ -234,7 +285,7 @@
       "thumbnail": "blog2.png",
       "createAt": "2024-01-02T17:00:00.000Z",
       "comments": 10,
-      "category": "Sức khỏe",
+      "category": 2,
       "title": "Ăn rau củ quả như thế nào là đủ?",
       "contents": "Theo thông tin từ Viện Dinh dưỡng quốc gia, người Việt đang ăn thịt nhiều gấp đôi so với mức khuyến nghị. Cụ thể, trung bình một người tiêu thụ 134 gram thịt/ngày, trong khi con số Tổ chức Phòng chống Ung thư Thế giới đưa ra không vượt quá 70 gram/ngày. Đáng chú ý là song song với tiêu thụ thừa thịt, người Việt còn đang có xu hướng… ngại ăn rau."
     },
@@ -243,9 +294,45 @@
       "thumbnail": "blog3.jpg",
       "createAt": "2024-03-01T00:00:00.000Z",
       "comments": 10,
-      "category": "Kiến thức",
+      "category": 3,
       "title": "Rau sạch là gì và cách để phân biệt với rau bẩn",
       "contents": "Bữa ăn của người Việt thường đi kèm với nhiều loại rau được chế biến theo nhiều cách khác nhau. Vì thế, khi có những vụ việc làm rau bẩn làm giả rau sạch, người tiêu dùng rất bức xúc và hoang mang. Trong bài viết này, Prudential sẽ giúp người tiêu dùng hiểu rõ hơn về rau sạch và rau bẩn cũng như đưa ra các mẹo để phân biệt rau."
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "role": 1,
+      "name": "Chính Nguyễn",
+      "phoneNumber": "0999888777",
+      "email": "chinhnguyennn24@gmail.com",
+      "address": "Go Vap, HCM"
+    },
+    {
+      "id": 2,
+      "role": 2,
+      "name": "Van Dao",
+      "phoneNumber": "0897676545",
+      "email": "daotien@gmail.com",
+      "address": "Tan Binh, HCM"
+    },
+    {
+      "id": 3,
+      "role": 2,
+      "name": "Ngoc Lan",
+      "phoneNumber": "0812212345",
+      "email": "lanlan@gmail.com",
+      "address": "Quan 1, HCM"
+    }
+  ],
+  "roles": [
+    {
+      "id": 1,
+      "name": "admin"
+    },
+    {
+      "id": 2,
+      "name": "user"
     }
   ]
 }

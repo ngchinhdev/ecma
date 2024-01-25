@@ -1,4 +1,4 @@
-import { getProducts } from "./api/getProducts.js";
+import { getProducts } from "./api/apiProducts.js";
 import { generateBlogs } from "./markups/blogsMarkup.js";
 import { generateHighlightCategories } from "./markups/categoriesMarkup.js";
 import { generateProducts } from "./markups/productsMarkup.js";
@@ -17,7 +17,7 @@ function handleNavControl(orgProducts) {
         hotProductsControl.querySelector('li.active').classList.remove('active');
         control.classList.add('active');
 
-        const clickedFilter = control.dataset.list;
+        const clickedFilter = +control.dataset.list;
         const filteredProducts = orgProducts.filter(product => product.category === clickedFilter);
 
         await generateProducts(hotProductContainer, filteredProducts.length ? filteredProducts.slice(0, 8) : orgProducts);

@@ -1,4 +1,5 @@
-import { getProducts } from "./api/getProducts.js";
+import { getProducts } from "./api/apiProducts.js";
+import { generateNavigation } from "./markups/navigationMarkup.js";
 import { generateProducts, noResult } from "./markups/productsMarkup.js";
 import { addToCart } from "./utils/addToCart.js";
 import { filterByPrice, filterIncDec, handlePagination, updateTotalResults } from "./utils/filterProducts.js";
@@ -8,48 +9,44 @@ const paginationContainer = document.querySelector('.product_pagination');
 
 const params = new URLSearchParams(window.location.search);
 const queryValue = params.get('query');
-const cateValue = params.get('cate');
-
-let filteredProductsFinal = [];
+const cateId = +params.get('cate');
 
 function removeDiacritics(str) {
     return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 }
 
 async function init() {
-    const navigationBar = document.querySelector('.navigation_bar ul');
-    navigationBar.insertAdjacentHTML('beforeend', `<li>
-                                        <span> <i class="fa fa-angle-right"></i> </span>
-                                        <a href="product.html?cate=${cateValue}">${cateValue}</a>
-                                    </li>`);
-
     if (queryValue) {
         const orgProducts = await getProducts();
+
+        await generateNavigation(null, queryValue);
 
         const filteredProducts = orgProducts.filter(product => removeDiacritics(product.name).toLowerCase().includes(removeDiacritics(queryValue.toLowerCase())));
 
         if (!filteredProducts.length) {
-            noResult(container, "Không tìm thấy sản phẩm tương ứng.");
+            noResult(productContainer, "Không tìm thấy sản phẩm tương ứng.");
             return;
         }
 
         const totalResults = await generateProducts(productContainer, filteredProducts);
         updateTotalResults(totalResults);
         handlePagination(paginationContainer, filteredProducts);
-        filterIncDec(filteredProducts, filteredProductsFinal);
-        filterByPrice(filteredProducts, filteredProductsFinal);
+        filterIncDec(filteredProducts);
+        filterByPrice(filteredProducts);
     }
 
-    if (cateValue) {
+    if (cateId) {
         const orgProducts = await getProducts();
 
-        const filteredProducts = orgProducts.filter(product => product.category === cateValue);
+        await generateNavigation(cateId);
+
+        const filteredProducts = orgProducts.filter(product => product.category === cateId);
 
         const totalResults = await generateProducts(productContainer, filteredProducts);
         updateTotalResults(totalResults);
-        handlePagination(paginationContainer, filteredProducts);
-        filterIncDec(filteredProducts, filteredProductsFinal);
-        filterByPrice(filteredProducts, filteredProductsFinal);
+        handlePagination(paginationContainer);
+        filterIncDec(filteredProducts);
+        filterByPrice(filteredProducts);
     }
 
     addToCart();

@@ -1,4 +1,4 @@
-import { getCategories } from "../api/getCategories.js";
+import { getCategories } from "../api/apiCategories.js";
 import { loader } from "../utils/loader.js";
 
 const menuCategory = document.querySelector('.list_cate');
@@ -12,7 +12,7 @@ export async function generateMenuCategories() {
     let markup = '';
 
     categories.map(category => {
-        markup += `<li><a href="product.html?cate=${category.name}">${category.name}</a></li>`;
+        markup += `<li><a href="product.html?cate=${category.id}">${category.name}</a></li>`;
     });
 
     menuCategory.insertAdjacentHTML('beforeend', markup);
@@ -31,7 +31,7 @@ export async function generateHighlightCategories() {
                         <div class="item">
                             <img src="./images/products/${category.image}" alt="${category.name}">
                             <h5>
-                                <a href="product.html?cate=${category.name}">${category.name}</a>
+                                <a href="product.html?cate=${category.id}">${category.name}</a>
                             </h5>
                         </div>
                     </div>`;

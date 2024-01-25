@@ -1,4 +1,4 @@
-import { getProducts } from "../api/getProducts.js";
+import { getProducts } from "../api/apiProducts.js";
 import { updateHeader } from "./updateHeader.js";
 
 export function addToCart(clickItem = '.list_prod', quantity = 1) {

@@ -1,4 +1,4 @@
-import { getData } from "./getData.js";
+import { getData } from "./apiData.js";
 
 export async function getProducts(id = '') {
     const products = await getData(`products/${id}`);

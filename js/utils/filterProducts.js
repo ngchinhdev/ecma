@@ -7,33 +7,41 @@ const filterSelectOptions = document.querySelector('.filter select');
 const filterPrice = document.querySelector('.price.filter_side');
 const filterDiscount = document.querySelector('.discount.filter_side');
 
+let filteredProducts = [];
+
 export function updateTotalResults(value) {
     totalResultLabel.innerText = `${value} Kết quả`;
 }
 
-export function filterIncDec(orgProducts, filteredProducts) {
+export function filterIncDec(orgProducts) {
     filterSelectOptions.addEventListener('change', async function () {
         paginationContainer.innerHTML = '';
+
+        let tempFiltered = [];
 
         const type = filterSelectOptions.value;
 
         const products = filteredProducts.length ? filteredProducts : orgProducts;
 
         if (type === 'inc') {
-            filteredProducts = products.slice().sort((a, b) => a.price - b.price);
+            tempFiltered = products.slice().sort((a, b) => a.price - b.price);
         }
 
         if (type === 'dec') {
-            filteredProducts = products.slice().sort((a, b) => b.price - a.price);
+            tempFiltered = products.slice().sort((a, b) => b.price - a.price);
         }
 
-        await generateProducts(shopProductContainer, filteredProducts.slice(0, 6));
-        handlePagination(paginationContainer, filteredProducts);
+        if (type === 'all') {
+            tempFiltered = products.slice();
+        }
+
+        await generateProducts(shopProductContainer, tempFiltered.slice(0, 6));
+        handlePagination(paginationContainer, tempFiltered);
     });
 }
 
-export function filterByPrice(orgProducts, filteredProducts) {
-    let products = [];
+export function filterByPrice(orgProducts) {
+    let products = []; // Avoid initial assign 
 
     filterPrice.addEventListener('change', async function (e) {
         paginationContainer.innerHTML = '';
@@ -80,7 +88,7 @@ export function filterByPrice(orgProducts, filteredProducts) {
             }
         }
 
-        filteredProducts = products;
+        filteredProducts = products; // Get final filter
 
         updateTotalResults(filteredProducts.length);
         if (!filteredProducts.length) return noResult(shopProductContainer, "Không có sản phẩm nào phù hợp.");
@@ -92,7 +100,7 @@ export function filterByPrice(orgProducts, filteredProducts) {
     });
 }
 
-export function filterByDiscount(orgProducts, filteredProducts) {
+export function filterByDiscount(orgProducts) {
     let products = [];
 
     filterDiscount.addEventListener('change', async function (e) {

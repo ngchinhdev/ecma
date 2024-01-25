@@ -1,4 +1,4 @@
-import { getProducts } from "./api/getProducts.js";
+import { getProducts } from "./api/apiProducts.js";
 import { generateProducts } from "./markups/productsMarkup.js";
 import { addToCart } from "./utils/addToCart.js";
 import { filterByDiscount, filterByPrice, filterIncDec, handlePagination, updateTotalResults } from "./utils/filterProducts.js";

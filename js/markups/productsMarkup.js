@@ -1,4 +1,4 @@
-import { getProducts } from "../api/getProducts.js";
+import { getProducts } from "../api/apiProducts.js";
 import { formatPrice } from "../utils/formatPrice.js";
 import { loader } from "../utils/loader.js";
 
@@ -19,6 +19,7 @@ export function generatePagination(container, totalPages, curPage) {
 }
 
 export async function generateProducts(container, filteredProducts) {
+    container.innerHTML = '';
     await loader(container, 1000);
 
     const orgProducts = await getProducts();
