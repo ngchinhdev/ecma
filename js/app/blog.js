@@ -1,4 +1,4 @@
-import { getBlogs, getBlogsByCategory } from "./api/apiBlogs.js";
+import { getBlogs, getBlogsByCategory } from "../api/apiBlogs.js";
 import { generateBlogs, generateCategoriesBlog } from "./markups/blogsMarkup.js";
 
 const blogContainerCate = document.querySelector('.nav_cate');

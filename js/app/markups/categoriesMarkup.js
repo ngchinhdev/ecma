@@ -1,5 +1,5 @@
-import { getCategories } from "../api/apiCategories.js";
-import { loader } from "../utils/loader.js";
+import { getCategories } from "../../api/apiCategories.js";
+import { loader } from "../../utils/loader.js";
 
 const menuCategory = document.querySelector('.list_cate');
 const highlightCategory = document.querySelector('.random_cate .container');

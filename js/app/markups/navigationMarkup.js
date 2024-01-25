@@ -1,4 +1,4 @@
-import { getCategories } from "../api/apiCategories.js";
+import { getCategories } from "../../api/apiCategories.js";
 
 export async function generateNavigation(cateId = null, query = null) {
     if (cateId) {

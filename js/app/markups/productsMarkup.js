@@ -1,6 +1,6 @@
-import { getProducts } from "../api/apiProducts.js";
-import { formatPrice } from "../utils/formatPrice.js";
-import { loader } from "../utils/loader.js";
+import { getProducts } from "../../api/apiProducts.js";
+import { formatPrice } from "../../utils/formatPrice.js";
+import { loader } from "../../utils/loader.js";
 
 export function noResult(container, message) {
     container.innerHTML = '';

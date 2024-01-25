@@ -1,5 +1,5 @@
-import { getBlogs, getCategoriesBlog } from "../api/apiBlogs.js";
-import { loader } from "../utils/loader.js";
+import { getBlogs, getCategoriesBlog } from "../../api/apiBlogs.js";
+import { loader } from "../../utils/loader.js";
 
 function formatDate(value) {
     const date = new Date(value);
@@ -33,7 +33,8 @@ export async function generateBlogs(container, blogs) {
     let markup = '';
 
     blogs.map(blog => {
-        const curCate = categoriesBlog.find(cate => cate.id === blog.category);
+        const curCate = categoriesBlog.find(cate => +cate.id === blog.category);
+
         markup += `<div class="blog_col">
                     <div class="blog_item">
                         <div class="blog_pic">

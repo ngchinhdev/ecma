@@ -1,5 +1,5 @@
 import { generateMenuCategories } from "./markups/categoriesMarkup.js";
-import { updateHeader } from "./utils/updateHeader.js";
+import { updateHeader } from "../utils/updateHeader.js";
 
 const barCategory = document.querySelector('.toggle');
 const menuCate = document.querySelector('.list_cate');

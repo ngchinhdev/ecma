@@ -1,7 +1,6 @@
 import { emptyCart, generateCart, updateBillCart } from "./markups/cartMarkup.js";
-import { formatPrice } from "./utils/formatPrice.js";
-import { loader } from "./utils/loader.js";
-import { updateHeader } from "./utils/updateHeader.js";
+import { formatPrice } from "../utils/formatPrice.js";
+import { updateHeader } from "../utils/updateHeader.js";
 
 function setCart(cart) {
     localStorage.setItem('cart', JSON.stringify(cart));

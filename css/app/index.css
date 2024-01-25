@@ -1,5 +1,5 @@
 section.hero .banner {
-    background-image: url('../images/banner.jpg');
+    background-image: url('../../images/banner.jpg');
     height: 440px;
     margin-top: 1.6rem;
     display: flex;

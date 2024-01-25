@@ -1,8 +1,9 @@
-import { getProducts } from "./api/apiProducts.js";
+import { getBlogs } from "../api/apiBlogs.js";
+import { getProducts } from "../api/apiProducts.js";
 import { generateBlogs } from "./markups/blogsMarkup.js";
 import { generateHighlightCategories } from "./markups/categoriesMarkup.js";
 import { generateProducts } from "./markups/productsMarkup.js";
-import { addToCart } from "./utils/addToCart.js";
+import { addToCart } from "../utils/addToCart.js";
 
 const hotProductsControl = document.querySelector('.hot_product .list_cate');
 const hotProductContainer = document.querySelector('.list_prod');
@@ -28,12 +29,13 @@ async function init() {
     await generateHighlightCategories();
 
     const orgProducts = await getProducts();
+    const blogs = await getBlogs();
 
     await generateProducts(hotProductContainer, orgProducts.slice(0, 8));
     handleNavControl(orgProducts);
     addToCart();
 
-    generateBlogs(blogContainer);
+    generateBlogs(blogContainer, blogs);
 }
 
 init()

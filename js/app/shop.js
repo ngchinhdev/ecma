@@ -1,7 +1,7 @@
-import { getProducts } from "./api/apiProducts.js";
+import { getProducts } from "../api/apiProducts.js";
 import { generateProducts } from "./markups/productsMarkup.js";
-import { addToCart } from "./utils/addToCart.js";
-import { filterByDiscount, filterByPrice, filterIncDec, handlePagination, updateTotalResults } from "./utils/filterProducts.js";
+import { addToCart } from "../utils/addToCart.js";
+import { filterByDiscount, filterByPrice, filterIncDec, handlePagination, updateTotalResults } from "../utils/filterProducts.js";
 
 const shopProductContainer = document.querySelector('.list_prod');
 const paginationContainer = document.querySelector('.product_pagination');

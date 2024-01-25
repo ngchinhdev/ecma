@@ -1,8 +1,8 @@
-import { getProducts } from "./api/apiProducts.js";
+import { getProducts } from "../api/apiProducts.js";
 import { generateImagesProduct, generateInfoProduct } from "./markups/detailsMarkup.js";
 import { generateNavigation } from "./markups/navigationMarkup.js";
 import { generateProducts } from "./markups/productsMarkup.js";
-import { addToCart } from "./utils/addToCart.js";
+import { addToCart } from "../utils/addToCart.js";
 
 const relatedProductContainer = document.querySelector('.list_prod');
 

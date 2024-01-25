@@ -1,4 +1,4 @@
-import { generatePagination, generateProducts, noResult } from "../markups/productsMarkup.js";
+import { generatePagination, generateProducts, noResult } from "../app/markups/productsMarkup.js";
 
 const shopProductContainer = document.querySelector('.list_prod');
 const paginationContainer = document.querySelector('.product_pagination');

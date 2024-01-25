@@ -1,6 +1,6 @@
-import { getData } from "../api/getData.js";
+import { getData } from "../../api/apiData.js";
 import { getCart } from "../cart.js";
-import { formatPrice } from "../utils/formatPrice.js";
+import { formatPrice } from "../../utils/formatPrice.js";
 
 const cartWrapper = document.querySelector('.wrapper');
 const cartTableBodyContainer = document.querySelector('table tbody');
