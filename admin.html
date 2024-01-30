@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.0.1/remixicon.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css">
     <link rel="stylesheet" href="css/admin/index.css">
+
+    <script type="module" defer src="js/admin/index.js"></script>
     <title>Admin Dashboard</title>
 </head>
 <body>
@@ -33,36 +35,113 @@
                 </div>
             </div>
         </header>
+
+        <main>
+            <!-- <div class="nav">
+                <div class="above_table">
+                    <div class="ctg_name">
+                        <strong>Danh mục sản phẩm</strong>
+                    </div>
+                </div>
+                <div class="add-new">
+                    <a href="">+ Thêm mới</a>
+                </div>
+            </div>
+            <table border="1">
+                <tr>
+                    <th>Mã danh mục</th>
+                    <th>Tên danh mục</th>
+                    <th>Hình ảnh</th>
+                    <th>Thao tác</th>
+                </tr>
+                <tr>
+                    <td>
+                        1
+                    </td>
+                    <td>
+                        Danh mục
+                    </td>
+                    <td>
+                        <img src="images/prod.jpg" alt="">
+                    </td>
+                    <td>
+                        <div class="last-td">
+                            <a href="#" class="change-btn">Sửa</a>
+                            <a href="#" class="del-btn">Xóa</a>
+                        </div>
+                    </td>
+                </tr>
+            </table> -->
+            <!-- <div class="nav">
+                <div class="above_table">
+                    <div class="ctg_name">
+                        <strong>Thêm danh mục</strong>
+                    </div>
+                </div>
+                <div class="add-new">
+                </div>
+            </div>-->
+            <!-- <div>
+                <div class="nav">
+                    <div class="above_table">
+                        <div class="ctg_name">
+                            <strong>Thêm danh mục</strong>
+                        </div>
+                    </div>
+                    <div class="add-new">
+                    </div>
+                </div>
+                <form class="add_cate">
+                    <div class="field">
+                        <label for="name">Tên danh mục</label>
+                        <input type="text" id="name">
+                    </div>
+                    <div class="field">
+                        <label for="image">Hình ảnh</label>
+                        <input type="file" id="image">
+                    </div>
+                </form>
+                <div>
+                    <button class="btn-add">Thêm</button>
+                </div>
+            </div> -->
+        </main>
+
         <aside>
             <div class="logo">
                 <a href="admin.html"><img src="images/logo.png" alt=""></a>
             </div>
             <ul class="sidebar_menu">
                 <li class="active">
-                    <a href="views/dashboard.php?page=dashboard">
-                        <span><i class="fa fa-tachometer" aria-hidden="true"></i>Thống kê</span>
+                    <a href="page=dashboard">
+                        <span data-page="dashboard"><i class="fa fa-tachometer" aria-hidden="true"></i>Thống kê</span>
                     </a>
                 </li>
                 <li class="">
-                    <a href="views/category.php?page=category">
-                        <span><i class="fa fa-tags" aria-hidden="true"></i>Danh mục</span>
+                    <a href="page=category">
+                        <span data-page="category"><i class="fa fa-tags" aria-hidden="true"></i>Danh mục</span>
                     </a>
                 </li>
                 <li class="toggle">
-                    <a href="views/include/category_product.php?cate=1">
-                        <span>
+                    <a href="page=product">
+                        <span data-page="product">
                             <i class="fa fa-lemon-o" aria-hidden="true"></i>Sản Phẩm
                         </span>
                     </a>
                 </li>
                 <li>
-                    <a href="views/user.php?page=user">
-                        <span><i class="fa fa-user" aria-hidden="true"></i>Khách Hàng</span>
+                    <a href="page=user">
+                        <span data-page="user"><i class="fa fa-user" aria-hidden="true"></i>Khách Hàng</span>
                     </a>
                 </li>
                 <li>
-                    <a href="views/order.php?page=order">
-                        <span><i class="fa fa-paper-plane" aria-hidden="true"></i>Bài viết</span>
+                    <a href="page=blog">
+                        <span data-page="blog"><i class="fa fa-paper-plane" aria-hidden="true"></i>Bài viết</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="page=order">
+                        <span data-page="order"><i class="fa fa-money" aria-hidden="true"></i>Hóa đơn</span>
                     </a>
                 </li>
             </ul>

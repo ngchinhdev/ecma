@@ -105,6 +105,7 @@ header .right_site .icon-box img {
     height: 40px;
     border-radius: 50%;
     margin-left: 20px;
+    border: 1px solid #b5b3b3;
 }
 
 aside {
@@ -211,20 +212,23 @@ span.success {
     margin-left: 20px;
 }
 
-main .add-new {
-    float: right;
+main .nav {
+    display: flex;
+    justify-content: space-between;
 }
 
-main .add-new a {
+main .add-new span {
+    cursor: pointer;
     padding: 6px 14px;
+    display: block;
     color: white;
     background-color: #7fad39;
     border-radius: 8px;
 }
 
 main .above_table {
-    padding-top: 24px;
     clear: both;
+    align-items: center;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -232,14 +236,6 @@ main .above_table {
 
 main .above_table .ctg_name {
     font-size: 24px;
-}
-
-main .above_table .search_box {
-    border: 1px solid red;
-    border-radius: 20px;
-    position: relative;
-    padding: 0 10px;
-    width: 200px;
 }
 
 main .above_table .search_box input {
@@ -258,7 +254,7 @@ main .above_table .search_box i {
 
 main table {
     margin: 0 auto;
-    width: 962px;
+    width: 100%;
     margin-top: 20px;
 }
 
@@ -269,25 +265,20 @@ main table td {
 }
 
 main table th {
-    font-size: 14px;
+    font-size: 16px;
 }
 
 main table td {
-    font-size: 12px;
+    font-size: 16px;
 }
 
 main table td.b-img {
     width: 140px;
 }
 
-main table td .box-imgs {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-main table td .box-imgs img,
+main table td img,
 img.avt-img {
+    border: 1px solid #333;
     width: 36px;
     max-width: 36px;
     height: 36px;
@@ -299,11 +290,11 @@ main table .last-td {
     justify-content: center;
 }
 
-main table .last-td a:first-child {
+main table .last-td span:first-child {
     margin-right: 4px;
 }
 
-main table .last-td a {
+main table .last-td span {
     line-height: 28px;
     color: white;
     height: 28px;
@@ -320,7 +311,90 @@ main table td .change-btn {
 }
 
 main table td .del-btn {
-    background-color: #7fad39
+    background-color: red
+}
+
+main .sub_main {
+    display: inline-block;
+}
+
+.add_cate {
+    margin-top: 1.4rem;
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+}
+
+.add_cate input[type=text] {
+    padding: 6px 10px;
+    font-size: 1rem;
+    border-radius: 6px;
+}
+
+.add_cate label {
+    padding-right: 10px;
+}
+
+button.btn-add {
+    margin-top: 1.6rem;
+    padding: 10px 1.3rem;
+    border-radius: 6px;
+    outline: none;
+    background-color: #7fad39;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: .9rem;
+    float: right;
+}
+
+.loader-wrap {
+    width: 100%;
+    text-align: center;
+    padding-top: 4rem;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #7fad39;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes prixClipFix {
+    0% {
+        clip-path: polygon(50% 50%, 0 0, 0 0, 0 0, 0 0, 0 0)
+    }
+
+    25% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 0, 100% 0, 100% 0)
+    }
+
+    50% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 100% 100%, 100% 100%)
+    }
+
+    75% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 100%)
+    }
+
+    100% {
+        clip-path: polygon(50% 50%, 0 0, 100% 0, 100% 100%, 0 100%, 0 0)
+    }
 }
 
 @keyframes pulse {
