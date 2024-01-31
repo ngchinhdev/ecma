@@ -314,21 +314,38 @@ main table td .del-btn {
     background-color: red
 }
 
-main .sub_main {
+.prod-desc p {
+    width: 340px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+main .sub_main.ib {
     display: inline-block;
 }
 
-.add_cate {
-    margin-top: 1.4rem;
-    display: flex;
-    gap: 5rem;
-    align-items: center;
+main .sub_main:not(.ib) {
+    /* width: 90%; */
 }
 
-.add_cate input[type=text] {
+.add_common {
+    margin-top: 1.4rem;
+}
+
+input.cm {
     padding: 6px 10px;
     font-size: 1rem;
     border-radius: 6px;
+}
+
+.add_cate {
+    display: flex;
+    gap: 5rem;
+    align-items: center;
 }
 
 .add_cate label {
@@ -346,6 +363,63 @@ button.btn-add {
     cursor: pointer;
     font-size: .9rem;
     float: right;
+}
+
+.add_prod .field {
+    margin-bottom: 1rem;
+}
+
+.add_prod input.w-100 {
+    width: 100%;
+}
+
+.add_prod input#desc {
+    height: 200px;
+}
+
+textarea {
+    width: 100%;
+    padding: 6px 10px;
+    font-size: 1rem;
+    border-radius: 6px;
+}
+
+.add_prod label {
+    display: block;
+    margin-bottom: .6rem;
+}
+
+.pagination {
+    float: right;
+    margin-top: 1.6rem;
+    padding-bottom: 2rem;
+}
+
+.pagination span {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #b2b2b2;
+    font-size: 14px;
+    color: #b2b2b2;
+    font-weight: 700;
+    line-height: 28px;
+    text-align: center;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: all, 0.3s;
+}
+
+.pagination span.active {
+    background: #7fad39;
+    border-color: #7fad39;
+    color: #ffffff;
+}
+
+.pagination span:hover {
+    background: #7fad39;
+    border-color: #7fad39;
+    color: #ffffff;
 }
 
 .loader-wrap {

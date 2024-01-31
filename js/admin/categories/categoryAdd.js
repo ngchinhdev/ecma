@@ -1,8 +1,9 @@
 import { addCategory } from "../../api/apiCategories.js";
+import { loader2 } from "../../utils/loader.js";
 import initCategories from "./CategoryRow.js";
 
 function generateAddMarkup(container) {
-    const markup = `<form class="sub_main" action="">
+    const markup = `<form class="sub_main ib" action="">
                         <div class="nav">
                             <div class="above_table">
                                 <div class="ctg_name">
@@ -12,10 +13,10 @@ function generateAddMarkup(container) {
                             <div class="add-new">
                             </div>
                         </div>
-                        <div class="add_cate">
+                        <div class="add_cate add_common">
                             <div class="field">
                                 <label for="name">Tên danh mục</label>
-                                <input type="text" id="name" name="name">
+                                <input type="text" id="name" class="cm" name="name">
                             </div>
                             <div class="field">
                                 <label for="image">Hình ảnh</label>
@@ -32,6 +33,8 @@ function generateAddMarkup(container) {
 }
 
 export default async function handleAddCategory(container) {
+    container.innerHTML = '';
+    await loader2(container, 500);
     generateAddMarkup(container);
 
     const formAdd = document.querySelector('form');

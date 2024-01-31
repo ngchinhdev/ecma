@@ -1,10 +1,16 @@
 import { getCategories } from "../../api/apiCategories.js";
 import { loader2 } from "../../utils/loader.js";
+import handlePagination, { generatePagination } from "../common/pagination.js";
 import handleAddCategory from "./CategoryAdd.js";
 import handleUpdateCategory from "./CategoryUpdate.js";
 import handleDeleteCategory from "./categoryDelete.js";
 
-function generateMarkup(categoriesData, container) {
+const PER_PAGE = 10;
+
+async function generateMarkup(categoriesData, startIdx, container) {
+    container.innerHTML = '';
+    await loader2(container, 500);
+
     const markup = `<div class="nav">
                 <div class="above_table">
                     <div class="ctg_name">
@@ -17,22 +23,22 @@ function generateMarkup(categoriesData, container) {
             </div>
             <table border="1">
                 <tr>
-                    <th>Mã danh mục</th>
+                    <th>#</th>
                     <th>Tên danh mục</th>
                     <th>Hình ảnh</th>
                     <th>Thao tác</th>
                 </tr>
-                ${categoriesData.map(markupRow).join('')}
+                ${categoriesData.map((cate, index) => markupRow(cate, index, startIdx)).join('')}
             </table>`;
 
     container.innerHTML = '';
     container.insertAdjacentHTML('beforeend', markup);
 }
 
-function markupRow(cate, index) {
+function markupRow(cate, index, startIdx) {
     return `<tr>
                 <td>
-                    ${index + 1}
+                    ${startIdx + index + 1}
                 </td>
                 <td>
                     ${cate.name}
@@ -49,16 +55,20 @@ function markupRow(cate, index) {
             </tr>`;
 }
 
-export default async function initCategories(container) {
-    container.innerHTML = '';
-
-    await loader2(container, 500);
+export default async function initCategories(container, curPage = 0) {
     const categoriesData = await getCategories();
 
-    generateMarkup(categoriesData, container);
+    const totalPages = Math.ceil(categoriesData.length / PER_PAGE);
+
+    const startIdx = curPage * PER_PAGE;
+    const endIdx = startIdx + PER_PAGE;
+
+    await generateMarkup(categoriesData.slice(startIdx, endIdx), startIdx, container);
+    generatePagination(totalPages, curPage, container);
 
     const addNewBtn = document.querySelector('.add-new span');
     const table = document.querySelector('table');
+    const pagination = document.querySelector('.pagination');
 
     addNewBtn.addEventListener('click', async function () {
         await handleAddCategory(container);
@@ -78,5 +88,15 @@ export default async function initCategories(container) {
 
             await handleUpdateCategory(idCate, container);
         }
+    });
+
+    pagination.addEventListener('click', async function (e) {
+        const btn = e.target;
+
+        if (!btn.hasAttribute('data-page')) return;
+
+        const pageNumber = +btn.dataset.page;
+
+        await handlePagination(container, pageNumber);
     });
 }

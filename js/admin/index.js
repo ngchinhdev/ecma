@@ -1,4 +1,5 @@
 import initCategories from "./categories/CategoryRow.js";
+import initProducts from "./products/productRow.js";
 
 const sideBar = document.querySelector('.sidebar_menu');
 const mainContainer = document.querySelector('main');
@@ -22,5 +23,9 @@ sideBar.addEventListener('click', function (e) {
 async function handleRenderContent(page) {
     if (page === 'category') {
         await initCategories(mainContainer);
+    }
+
+    if (page === 'product') {
+        await initProducts(mainContainer);
     }
 }

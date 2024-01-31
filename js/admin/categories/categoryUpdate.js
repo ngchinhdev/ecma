@@ -1,4 +1,5 @@
 import { getCategory, updateCategory } from "../../api/apiCategories.js";
+import { loader2 } from "../../utils/loader.js";
 import initCategories from "./CategoryRow.js";
 
 function generateUpdateMarkup(dataOld, container) {
@@ -32,6 +33,9 @@ function generateUpdateMarkup(dataOld, container) {
 }
 
 export default async function handleUpdateCategory(idCate, container) {
+    container.innerHTML = '';
+    await loader2(container, 500);
+
     const dataOld = await getCategory(idCate);
     generateUpdateMarkup(dataOld, container);
 

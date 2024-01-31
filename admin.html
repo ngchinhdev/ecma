@@ -81,30 +81,50 @@
                 <div class="add-new">
                 </div>
             </div>-->
-            <!-- <div>
+            <form class="sub_main" action="">
                 <div class="nav">
                     <div class="above_table">
                         <div class="ctg_name">
-                            <strong>Thêm danh mục</strong>
+                            <strong>Thêm sản phẩm</strong>
                         </div>
                     </div>
                     <div class="add-new">
                     </div>
                 </div>
-                <form class="add_cate">
+                <div class="add_prod add_common">
                     <div class="field">
-                        <label for="name">Tên danh mục</label>
-                        <input type="text" id="name">
+                        <label for="name">Tên sản phẩm</label>
+                        <input type="text" id="name" name="name" class="w-100 cm">
+                    </div>
+                    <div class="field">
+                        <label for="price">Giá sản phẩm</label>
+                        <input type="number" id="price" name="price" class="w-100 cm">
+                    </div>
+                    <div class="field">
+                        <label for="orgPrice">Giá gốc</label>
+                        <input type="number" id="orgPrice" name="orgPrice" class="w-100 cm">
+                    </div>
+                    <div class="field">
+                        <label for="quantity">Số lượng</label>
+                        <input type="number" id="quantity" name="quantity" class="w-100 cm">
+                    </div>
+                    <div class="field">
+                        <label for="mass">Khối lượng</label>
+                        <input type="number" id="mass" name="mass" class="w-100 cm">
+                    </div>
+                    <div class="field">
+                        <label for="desc">Mô tả sản phẩm</label>
+                        <textarea name="desc" id="desc" rows="10"></textarea>
                     </div>
                     <div class="field">
                         <label for="image">Hình ảnh</label>
-                        <input type="file" id="image">
+                        <input type="file" id="image" name="image" multiple>
                     </div>
-                </form>
+                </div>
                 <div>
                     <button class="btn-add">Thêm</button>
                 </div>
-            </div> -->
+            </form>
         </main>
 
         <aside>
