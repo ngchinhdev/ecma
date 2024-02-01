@@ -256,12 +256,14 @@ main table {
     margin: 0 auto;
     width: 100%;
     margin-top: 20px;
+    border-collapse: collapse;
 }
 
 main table th,
 main table td {
     padding: 6px;
     text-align: center;
+    border-bottom: 1px solid #b5b3b3;
 }
 
 main table th {
@@ -271,6 +273,11 @@ main table th {
 main table td {
     font-size: 16px;
 }
+
+/* main table td:not(:last-child),
+main table th:not(:last-child) {
+    border-right: 1px solid #b5b3b3;
+} */
 
 main table td.b-img {
     width: 140px;
@@ -324,6 +331,22 @@ main table td .del-btn {
     -webkit-box-orient: vertical;
 }
 
+main table td img.ctn {
+    width: 120px;
+    max-width: 120px;
+    height: 60px;
+}
+
+.ctn-blog p {
+    width: 500px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
 main .sub_main.ib {
     display: inline-block;
 }
@@ -340,6 +363,15 @@ input.cm {
     padding: 6px 10px;
     font-size: 1rem;
     border-radius: 6px;
+}
+
+select,
+option {
+    width: 100%;
+    padding: 6px 10px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
 .add_cate {

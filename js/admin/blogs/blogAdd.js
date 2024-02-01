@@ -1,22 +1,30 @@
-import { addCategory } from "../../api/apiCategories.js";
 import { loader2 } from "../../utils/loader.js";
-import initCategories from "./categoryRow.js";
 
 function generateAddMarkup(container) {
-    const markup = `<form class="sub_main ib" action="" method="post">
+    const markup = `<form class="sub_main" action="" method="post">
                         <div class="nav">
                             <div class="above_table">
                                 <div class="ctg_name">
-                                    <strong>Thêm danh mục</strong>
+                                    <strong>Thêm bài viết</strong>
                                 </div>
                             </div>
                             <div class="add-new">
                             </div>
                         </div>
-                        <div class="add_cate add_common">
+                        <div class="add_prod add_common">
                             <div class="field">
-                                <label for="name">Tên danh mục</label>
-                                <input type="text" id="name" class="cm" name="name">
+                                <label for="title">Tiêu đề</label>
+                                <input type="text" id="title" name="title" class="w-100 cm">
+                            </div>
+                            <div class="field">
+                                <label for="price">Nội dung</label>
+                                <textarea name="contents" id="contents" rows="10"></textarea>
+                            </div>
+                            <div class="field">
+                                <label for="category">Danh mục</label>
+                                <select name="category" id="category">
+                                    ${[].map(cate => `<option value="${cate.id}">${cate.name}</option>`).join('')}
+                                </select>
                             </div>
                             <div class="field">
                                 <label for="image">Hình ảnh</label>
@@ -32,7 +40,7 @@ function generateAddMarkup(container) {
     container.insertAdjacentHTML('beforeend', markup);
 }
 
-export default async function handleAddCategory(container) {
+export default async function handleAddBlog(container) {
     container.innerHTML = '';
     await loader2(container, 500);
     generateAddMarkup(container);
@@ -53,9 +61,6 @@ export default async function handleAddCategory(container) {
         const isAdd = confirm('Xác nhận thêm danh mục?');
 
         if (!isAdd) return;
-
-        await addCategory({ ...formData, image: formData.image.name });
-        await initCategories(container);
     });
 }
 

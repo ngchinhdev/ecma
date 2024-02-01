@@ -1,8 +1,10 @@
-import { getProducts } from "../../api/apiProducts.js";
+import { getCategories } from "../../api/apiCategories.js";
+import { getProducts, updateProd } from "../../api/apiProducts.js";
 import { loader2 } from "../../utils/loader.js";
+import initProducts from "./productRow.js";
 
-function generateUpdateMarkup(dataOld, container) {
-    const markup = `<form class="sub_main" action="">
+function generateUpdateMarkup(dataOld, categories, container) {
+    const markup = `<form class="sub_main" action="" method="patch">
                         <div class="nav">
                             <div class="above_table">
                                 <div class="ctg_name">
@@ -34,8 +36,14 @@ function generateUpdateMarkup(dataOld, container) {
                                 <input type="text" id="mass" value=${dataOld.mass} name="mass" class="w-100 cm">
                             </div>
                             <div class="field">
-                                <label for="desc">Mô tả sản phẩm</label>
-                                <textarea name="desc" id="desc" rows="10">${dataOld.description}</textarea>
+                                <label for="category">Danh mục</label>
+                                <select name="category" id="category">
+                                    ${categories.map(cate => `<option value="${cate.id}" ${cate.id == dataOld.category ? 'selected' : ''}>${cate.name}</option>`).join('')}
+                                </select>
+                            </div>
+                            <div class="field">
+                                <label for="description">Mô tả sản phẩm</label>
+                                <textarea name="description" id="description" rows="10">${dataOld.description}</textarea>
                             </div>
                             <div class="field">
                                 <label for="image">Hình ảnh</label>
@@ -56,7 +64,8 @@ export default async function handleUpdateProduct(idProd, container) {
     await loader2(container, 500);
 
     const dataOld = await getProducts(idProd);
-    generateUpdateMarkup(dataOld, container);
+    const categories = await getCategories();
+    generateUpdateMarkup(dataOld, categories, container);
 
     const formAdd = document.querySelector('form');
 
@@ -64,18 +73,36 @@ export default async function handleUpdateProduct(idProd, container) {
         e.preventDefault();
 
         const form = new FormData(formAdd);
-        const formData = Object.fromEntries(form);
+        const formData = {};
 
-        if (!formData.name) {
+        for (let [key, value] of form.entries()) {
+            if (key === "images") {
+                formData[key] = formData[key] || [];
+                formData[key].push(value);
+            } else {
+                formData[key] = value;
+            }
+        }
+
+        const { name, description, mass, orgPrice, price, quantity, category } = formData;
+
+        if (!name || !description || !mass || !orgPrice || !price || !quantity || !category) {
             alert('Vui lòng nhập đầy đủ các trường!');
             return;
         }
 
-        const isAdd = confirm('Xác nhận chỉnh sửa danh mục?');
+        const isAdd = confirm('Xác nhận cập nhật sản phẩm?');
 
         if (!isAdd) return;
 
-        await updateCategory(idProd, { ...formData, image: formData.image.name ? formData.image.name : dataOld.image });
-        await initCategories(container);
+        const newImages = formData.images?.map(img => img.name);
+
+        await updateProd(dataOld.id, {
+            ...formData,
+            images: !newImages?.length ? formData.images : newImages,
+            purchased: formData.purchased,
+            likes: formData.likes
+        });
+        await initProducts(container);
     });
 }

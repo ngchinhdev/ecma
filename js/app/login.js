@@ -12,7 +12,6 @@ function isError(input, message) {
     input.classList.add("error");
     input.classList.add("placeHD");
     input.classList.remove("success");
-    console.log(input);
     siblingElem.classList.add("error");
     siblingElem.innerText = message;
 }
@@ -104,16 +103,30 @@ formLogin && formLogin.addEventListener('submit', function (e) {
     }
 });
 
-formRegister && formRegister.addEventListener('submit', function (e) {
+formRegister && formRegister.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
     if (!(checkEmail(email) && checkPassword(password) && checkPhoneNumber(phoneNum) &&
         checkName(familyName, "Họ") && checkName(firstName, "Tên") && checkCfPassword(password, repass))) {
-        e.preventDefault();
         checkEmail(email);
         checkPassword(password);
         checkPhoneNumber(phoneNum);
         checkName(familyName, "Họ");
         checkName(firstName, "Tên");
         checkCfPassword(password, repass);
+    } else {
+        const form = new FormData(formRegister);
+        const formData = Object.fromEntries(form);
+
+        await registerUser({
+            role: "2",
+            name: formData.ho + formData.ten,
+            phoneNumber: formData.phone,
+            email: formData.email,
+            address: formData.address
+        });
+
+        alert('Đăng ký tài khoản thành công.');
     }
 });
 

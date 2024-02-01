@@ -1,7 +1,10 @@
+import { getCategories } from "../../api/apiCategories.js";
+import { addProduct } from "../../api/apiProducts.js";
 import { loader2 } from "../../utils/loader.js";
+import initProducts from "./productRow.js";
 
-function generateAddMarkup(container) {
-    const markup = `<form class="sub_main" action="">
+function generateAddMarkup(categories, container) {
+    const markup = `<form class="sub_main" action="" method="post">
                         <div class="nav">
                             <div class="above_table">
                                 <div class="ctg_name">
@@ -33,12 +36,18 @@ function generateAddMarkup(container) {
                                 <input type="text" id="mass" name="mass" class="w-100 cm">
                             </div>
                             <div class="field">
-                                <label for="desc">Mô tả sản phẩm</label>
-                                <textarea name="desc" id="desc" rows="10"></textarea>
+                                <label for="category">Danh mục</label>
+                                <select name="category" id="category">
+                                    ${categories.map(cate => `<option value="${cate.id}">${cate.name}</option>`).join('')}
+                                </select>
                             </div>
                             <div class="field">
-                                <label for="image">Hình ảnh</label>
-                                <input type="file" id="image" name="image" multiple>
+                                <label for="description">Mô tả sản phẩm</label>
+                                <textarea name="description" id="description" rows="10"></textarea>
+                            </div>
+                            <div class="field">
+                                <label for="images">Hình ảnh</label>
+                                <input type="file" id="images" name="images" multiple>
                             </div>
                         </div>
                         <div>
@@ -53,7 +62,8 @@ function generateAddMarkup(container) {
 export default async function handleAddProduct(container) {
     container.innerHTML = '';
     await loader2(container, 500);
-    generateAddMarkup(container);
+    const categories = await getCategories();
+    generateAddMarkup(categories, container);
 
     const formAdd = document.querySelector('form');
 
@@ -61,19 +71,35 @@ export default async function handleAddProduct(container) {
         e.preventDefault();
 
         const form = new FormData(formAdd);
-        const formData = Object.fromEntries(form);
+        const formData = {};
 
-        if (!formData.name || !formData.image.name) {
+        for (let [key, value] of form.entries()) {
+            if (key === "images") {
+                formData[key] = formData[key] || [];
+                formData[key].push(value);
+            } else {
+                formData[key] = value;
+            }
+        }
+
+        const { name, description, images, mass, orgPrice, price, quantity, category } = formData;
+
+        if (!name || !description || !images.length || !mass || !orgPrice || !price || !quantity || !category) {
             alert('Vui lòng nhập đầy đủ các trường!');
             return;
         }
 
-        const isAdd = confirm('Xác nhận thêm danh mục?');
+        const isAdd = confirm('Xác nhận thêm sản phẩm?');
 
         if (!isAdd) return;
 
-        await addCategory({ ...formData, image: formData.image.name });
-        await initCategories(container);
+        await addProduct({
+            ...formData,
+            images: formData.images.map(img => img.name),
+            purchased: 0,
+            likes: 0
+        });
+        await initProducts(container);
     });
 }
 

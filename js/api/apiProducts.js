@@ -22,14 +22,14 @@ export async function deleteProduct(idProd) {
     }
 }
 
-export async function addCategory(newCate) {
+export async function addProduct(newProd) {
     try {
         const response = await fetch(`${BASE_URL}/${PRODUCT_URL}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify(newCate),
+            body: JSON.stringify(newProd),
         });
 
         if (!response.ok) {
@@ -40,7 +40,7 @@ export async function addCategory(newCate) {
     }
 }
 
-export async function updateCategory(idProd, updateProd) {
+export async function updateProd(idProd, updateProd) {
     try {
         const response = await fetch(`${BASE_URL}/${PRODUCT_URL}/${idProd}`, {
             method: 'PATCH',

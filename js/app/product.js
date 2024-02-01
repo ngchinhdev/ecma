@@ -9,7 +9,7 @@ const paginationContainer = document.querySelector('.product_pagination');
 
 const params = new URLSearchParams(window.location.search);
 const queryValue = params.get('query');
-const cateId = +params.get('cate');
+const cateId = params.get('cate');
 
 function removeDiacritics(str) {
     return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
@@ -40,7 +40,7 @@ async function init() {
 
         await generateNavigation(cateId);
 
-        const filteredProducts = orgProducts.filter(product => product.category === cateId);
+        const filteredProducts = orgProducts.filter(product => product.category == cateId);
 
         const totalResults = await generateProducts(productContainer, filteredProducts);
         updateTotalResults(totalResults);

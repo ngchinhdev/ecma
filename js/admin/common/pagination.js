@@ -13,6 +13,6 @@ export function generatePagination(totalPages, curPage, container) {
     container.insertAdjacentHTML('beforeend', markup);
 }
 
-export default async function handlePagination(container, curPage) {
-    await initProducts(container, curPage);
+export default async function handlePagination(container, curPage, init) {
+    await init(container, curPage);
 }

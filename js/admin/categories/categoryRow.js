@@ -21,7 +21,7 @@ async function generateMarkup(categoriesData, startIdx, container) {
                     <span >+ Thêm mới</span>
                 </div>
             </div>
-            <table border="1">
+            <table >
                 <tr>
                     <th>#</th>
                     <th>Tên danh mục</th>
@@ -97,6 +97,6 @@ export default async function initCategories(container, curPage = 0) {
 
         const pageNumber = +btn.dataset.page;
 
-        await handlePagination(container, pageNumber);
+        await handlePagination(container, pageNumber, initCategories);
     });
 }

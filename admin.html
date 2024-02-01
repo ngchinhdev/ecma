@@ -37,21 +37,25 @@
         </header>
 
         <main>
+            <!-- Dashboard -->
             <!-- <div class="nav">
                 <div class="above_table">
                     <div class="ctg_name">
-                        <strong>Danh mục sản phẩm</strong>
+                        <strong>Bài viết</strong>
                     </div>
                 </div>
                 <div class="add-new">
-                    <a href="">+ Thêm mới</a>
+                    <span>+ Thêm mới</span>
                 </div>
             </div>
-            <table border="1">
+            <table>
                 <tr>
-                    <th>Mã danh mục</th>
-                    <th>Tên danh mục</th>
+                    <th>#</th>
+                    <th>Tiêu đề</th>
+                    <th>Thể loại</th>
                     <th>Hình ảnh</th>
+                    <th>Bình luận</th>
+                    <th>Nội dung</th>
                     <th>Thao tác</th>
                 </tr>
                 <tr>
@@ -62,69 +66,25 @@
                         Danh mục
                     </td>
                     <td>
-                        <img src="images/prod.jpg" alt="">
+                        099999999
+                    </td>
+                    <td>
+                        chinhsn@gmail.com
+                    </td>
+                    <td>
+                        cGVHCM
+                    </td>
+                    <td>
+                        hi
                     </td>
                     <td>
                         <div class="last-td">
-                            <a href="#" class="change-btn">Sửa</a>
-                            <a href="#" class="del-btn">Xóa</a>
+                            <span data-id=${cate.id} class="change-btn">Sửa</span>
+                            <span data-id=${cate.id} class="del-btn">Xóa</span>
                         </div>
                     </td>
                 </tr>
             </table> -->
-            <!-- <div class="nav">
-                <div class="above_table">
-                    <div class="ctg_name">
-                        <strong>Thêm danh mục</strong>
-                    </div>
-                </div>
-                <div class="add-new">
-                </div>
-            </div>-->
-            <form class="sub_main" action="">
-                <div class="nav">
-                    <div class="above_table">
-                        <div class="ctg_name">
-                            <strong>Thêm sản phẩm</strong>
-                        </div>
-                    </div>
-                    <div class="add-new">
-                    </div>
-                </div>
-                <div class="add_prod add_common">
-                    <div class="field">
-                        <label for="name">Tên sản phẩm</label>
-                        <input type="text" id="name" name="name" class="w-100 cm">
-                    </div>
-                    <div class="field">
-                        <label for="price">Giá sản phẩm</label>
-                        <input type="number" id="price" name="price" class="w-100 cm">
-                    </div>
-                    <div class="field">
-                        <label for="orgPrice">Giá gốc</label>
-                        <input type="number" id="orgPrice" name="orgPrice" class="w-100 cm">
-                    </div>
-                    <div class="field">
-                        <label for="quantity">Số lượng</label>
-                        <input type="number" id="quantity" name="quantity" class="w-100 cm">
-                    </div>
-                    <div class="field">
-                        <label for="mass">Khối lượng</label>
-                        <input type="number" id="mass" name="mass" class="w-100 cm">
-                    </div>
-                    <div class="field">
-                        <label for="desc">Mô tả sản phẩm</label>
-                        <textarea name="desc" id="desc" rows="10"></textarea>
-                    </div>
-                    <div class="field">
-                        <label for="image">Hình ảnh</label>
-                        <input type="file" id="image" name="image" multiple>
-                    </div>
-                </div>
-                <div>
-                    <button class="btn-add">Thêm</button>
-                </div>
-            </form>
         </main>
 
         <aside>
@@ -135,6 +95,11 @@
                 <li class="active">
                     <a href="page=dashboard">
                         <span data-page="dashboard"><i class="fa fa-tachometer" aria-hidden="true"></i>Thống kê</span>
+                    </a>
+                </li>
+                <li class="">
+                    <a href="page=role">
+                        <span data-page="role"><i class="fa fa-cog" aria-hidden="true"></i>Vai trò</span>
                     </a>
                 </li>
                 <li class="">
@@ -151,7 +116,7 @@
                 </li>
                 <li>
                     <a href="page=user">
-                        <span data-page="user"><i class="fa fa-user" aria-hidden="true"></i>Khách Hàng</span>
+                        <span data-page="user"><i class="fa fa-user" aria-hidden="true"></i>Người dùng</span>
                     </a>
                 </li>
                 <li>

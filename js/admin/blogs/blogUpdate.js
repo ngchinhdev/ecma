@@ -1,22 +1,31 @@
-import { getCategory, updateCategory } from "../../api/apiCategories.js";
+import { getBlog } from "../../api/apiBlogs.js";
 import { loader2 } from "../../utils/loader.js";
-import initCategories from "./categoryRow.js";
 
 function generateUpdateMarkup(dataOld, container) {
-    const markup = `<form class="sub_main" action="" method="patch">
+    const markup = `<form class="sub_main" action="" method="post">
                         <div class="nav">
                             <div class="above_table">
                                 <div class="ctg_name">
-                                    <strong>Cập nhật danh mục</strong>
+                                    <strong>Thêm bài viết</strong>
                                 </div>
                             </div>
                             <div class="add-new">
                             </div>
                         </div>
-                        <div class="add_cate add_common">
+                        <div class="add_prod add_common">
                             <div class="field">
-                                <label for="name">Tên danh mục</label>
-                                <input type="text" id="name" class="cm" name="name" value="${dataOld.name}">
+                                <label for="title">Tiêu đề</label>
+                                <input type="text" id="title" value="${dataOld.title}" name="title" class="w-100 cm">
+                            </div>
+                            <div class="field">
+                                <label for="price">Nội dung</label>
+                                <textarea name="contents" id="contents" rows="10">${dataOld.contents}</textarea>
+                            </div>
+                            <div class="field">
+                                <label for="category">Danh mục</label>
+                                <select name="category" id="category">
+                                    ${[].map(cate => `<option value="${cate.id}">${cate.name}</option>`).join('')}
+                                </select>
                             </div>
                             <div class="field">
                                 <label for="image">Hình ảnh</label>
@@ -32,11 +41,11 @@ function generateUpdateMarkup(dataOld, container) {
     container.insertAdjacentHTML('beforeend', markup);
 }
 
-export default async function handleUpdateCategory(idCate, container) {
+export default async function handleUpdateBlog(idBlog, container) {
     container.innerHTML = '';
     await loader2(container, 500);
 
-    const dataOld = await getCategory(idCate);
+    const dataOld = await getBlog(idBlog);
     generateUpdateMarkup(dataOld, container);
 
     const formAdd = document.querySelector('form');
@@ -56,7 +65,7 @@ export default async function handleUpdateCategory(idCate, container) {
 
         if (!isAdd) return;
 
-        await updateCategory(idCate, { ...formData, image: formData.image.name ? formData.image.name : dataOld.image });
+        await updateCategory(idBlog, { ...formData, image: formData.image.name ? formData.image.name : dataOld.image });
         await initCategories(container);
     });
 }

@@ -4,7 +4,7 @@ export async function generateNavigation(cateId = null, query = null) {
     if (cateId) {
         const categories = await getCategories();
 
-        const curCate = categories.find(cate => +cate.id === cateId);
+        const curCate = categories.find(cate => cate.id == cateId);
 
         const navigationBar = document.querySelector('.navigation_bar ul');
         navigationBar.insertAdjacentHTML('beforeend', `<li>

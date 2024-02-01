@@ -1,5 +1,7 @@
-import initCategories from "./categories/CategoryRow.js";
+import initBlogs from "./blogs/blogRow.js";
+import initCategories from "./categories/categoryRow.js";
 import initProducts from "./products/productRow.js";
+import initUsers from "./users/userRow.js";
 
 const sideBar = document.querySelector('.sidebar_menu');
 const mainContainer = document.querySelector('main');
@@ -27,5 +29,13 @@ async function handleRenderContent(page) {
 
     if (page === 'product') {
         await initProducts(mainContainer);
+    }
+
+    if (page === 'user') {
+        await initUsers(mainContainer);
+    }
+
+    if (page === 'blog') {
+        await initBlogs(mainContainer);
     }
 }
