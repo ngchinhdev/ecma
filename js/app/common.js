@@ -15,6 +15,7 @@ barCategory.addEventListener('click', function () {
     }
 });
 
+// Search bar
 function search() {
     if (!searchBox.value) {
         searchBox.focus();
@@ -28,7 +29,23 @@ searchBox.addEventListener('keyup', (e) => e.key !== 'Enter' ? null : search());
 searchBtn.addEventListener('click', search);
 
 await generateMenuCategories();
+
 const paramsUrl = window.location.href;
 if (paramsUrl.includes('index.html')) menuCate.style.maxHeight = menuCate.scrollHeight + 'px';
 updateHeader();
 if (paramsUrl.includes('query')) searchBox.value = paramsUrl.slice(paramsUrl.indexOf('=') + 1);
+
+// Login status
+let isLogin = localStorage.getItem('isLogin');
+
+if (!isLogin) localStorage.setItem('isLogin', '');
+if (isLogin) {
+    const logoutBtn = document.querySelector('.logout');
+    document.querySelector('.login.ic').innerHTML = `<span class="logged">Hi, ${isLogin}</span>`;
+    document.querySelector('.logged').addEventListener('click', () => logoutBtn.classList.toggle('active'));
+
+    logoutBtn.addEventListener('click', function () {
+        localStorage.setItem('isLogin', '');
+        window.location.href = 'index.html';
+    });
+}

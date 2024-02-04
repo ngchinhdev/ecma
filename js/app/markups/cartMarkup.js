@@ -1,14 +1,11 @@
 import { getData } from "../../api/apiData.js";
 import { getCart } from "../cart.js";
 import { formatPrice } from "../../utils/formatPrice.js";
+import { loader } from "../../utils/loader.js";
 
-const cartWrapper = document.querySelector('.wrapper');
-const cartTableBodyContainer = document.querySelector('table tbody');
-const cartBillPrice = document.querySelector('.total_bill');
-
-export function emptyCart() {
-    cartWrapper.innerText = '';
-    cartWrapper.insertAdjacentHTML('beforeend', `<div class="empty_cart">
+export function emptyCart(container) {
+    container.innerText = '';
+    container.insertAdjacentHTML('beforeend', `<div class="empty_cart">
                                                 <img src="../images/empty-cart.png" />
                                                 <p>Chưa có sản phẩm nào trong giỏ hàng.</p>
                                                 <a href="shop.html">
@@ -17,14 +14,61 @@ export function emptyCart() {
                                             </div>`);
 }
 
-export async function generateCart() {
+export async function generateCart(container) {
+    container.innerHTML = '';
+    await loader(container, 500);
     const cartData = getCart();
 
     if (!cartData.length) {
         emptyCart();
         return false;
     }
+    const markup = `<section class="cart">
+                    <div class="container side_pad">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="prod">Sản phẩm</th>
+                                    <th>Giá</th>
+                                    <th>Số lượng</th>
+                                    <th>Tổng</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                ${await productCartRows(cartData)}
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
 
+                <section class="discount_bill">
+                    <div class="container">
+                        <div class="shoping_discount">
+                            <h5>Mã giảm giá</h5>
+                            <form action="#">
+                                <input type="text" placeholder="Nhập mã giảm giá của bạn">
+                                <button type="submit" class="site-btn">Áp dụng</button>
+                            </form>
+                        </div>
+                        <div class="shoping_checkout">
+                            <h5>Tổng thanh toán</h5>
+                            <ul>
+                                <li>Giảm giá <span>0 ₫</span></li>
+                                <li>Thanh toán <span class="total_bill">$454.98</span></li>
+                            </ul>
+                            <a href="checkout.html" class="primary-btn">Thanh toán</a>
+                        </div>
+                    </div>
+                </section>`;
+
+    container.innerHTML = '';
+    container.insertAdjacentHTML('beforeend', markup);
+
+    return true;
+}
+
+async function productCartRows(cartData) {
     const promises = cartData.map(async item => {
         const dataItem = await getData(`products/${item.id}`);
 
@@ -56,15 +100,14 @@ export async function generateCart() {
 
     const markup = await Promise.all(promises);
 
-    cartTableBodyContainer.innerHTML = '';
-    cartTableBodyContainer.insertAdjacentHTML('beforeend', markup.join(''));
-
-    return true;
+    return markup.join('');
 }
 
 export function updateBillCart() {
     const cartData = getCart();
 
     const totalPrice = cartData.reduce((acc, cur) => acc += +cur.price * cur.quantity, 0);
+
+    const cartBillPrice = document.querySelector('.total_bill');
     cartBillPrice.innerText = formatPrice(totalPrice);
 }

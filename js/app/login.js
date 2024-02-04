@@ -1,3 +1,5 @@
+import { confirmLogin, registerUser } from "../api/apiUsers.js";
+
 const familyName = document.querySelector("input[name=ho]");
 const firstName = document.querySelector("input[name=ten]");
 const email = document.querySelector("input[name=email]");
@@ -52,14 +54,17 @@ function checkPhoneNumber(input) {
     return isTrue;
 }
 
-function checkEmail(input) {
+function checkEmail(input, cf = false) {
     let isTrue = true;
     let emailReg = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (input.value === '') {
+    if (input.value === '' && !cf) {
         isError(input, '(*) Vui lòng nhập email!');
         return false;
-    } else if (!emailReg.test(input.value)) {
+    } else if (!emailReg.test(input.value) && !cf) {
         isError(input, "(*) Email không hợp lệ!");
+        isTrue = false;
+    } else if (cf) {
+        isError(input, "(*) Email không tồn tại!");
         isTrue = false;
     } else {
         isSuccess(input);
@@ -67,13 +72,16 @@ function checkEmail(input) {
     return isTrue;
 }
 
-function checkPassword(input) {
+function checkPassword(input, cf) {
     let isTrue = true;
-    if (input.value === '') {
+    if (input.value === '' && !cf) {
         isError(input, '(*) Vui lòng nhập mật khẩu!');
         return false;
-    } else if (input.value.length < 5) {
+    } else if (input.value.length < 5 && !cf) {
         isError(input, '(*) Vui lòng nhập nhiều hơn 5 ký tự!');
+        isTrue = false;
+    } else if (cf) {
+        isError(input, '(*) Mật khẩu không đúng');
         isTrue = false;
     } else {
         isSuccess(input);
@@ -95,11 +103,25 @@ function checkCfPassword(pw, cfpw) {
     return isTrue;
 }
 
-formLogin && formLogin.addEventListener('submit', function (e) {
+formLogin && formLogin.addEventListener('submit', async function (e) {
+    e.preventDefault();
+
     if (!(checkEmail(email) && checkPassword(password))) {
-        e.preventDefault();
         checkEmail(email);
         checkPassword(password);
+    } else {
+        const result = await confirmLogin(email.value, password.value);
+
+        if (result === 0) window.location.href = 'admin.html';
+
+        if (result === 1) checkEmail(email, true);
+
+        if (result === 2) checkPassword(password, true);
+
+        if (result.name) {
+            localStorage.setItem('isLogin', `${result.name.split(' ')[0]}`);
+            window.location.href = 'index.html';
+        }
     }
 });
 
@@ -120,10 +142,11 @@ formRegister && formRegister.addEventListener('submit', async function (e) {
 
         await registerUser({
             role: "2",
-            name: formData.ho + formData.ten,
+            name: formData.ho + ' ' + formData.ten,
             phoneNumber: formData.phone,
             email: formData.email,
-            address: formData.address
+            address: formData.address,
+            password: formData.repass
         });
 
         alert('Đăng ký tài khoản thành công.');

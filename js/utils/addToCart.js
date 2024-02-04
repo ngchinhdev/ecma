@@ -3,6 +3,7 @@ import { updateHeader } from "./updateHeader.js";
 
 export function addToCart(clickItem = '.list_prod', quantity = 1) {
     document.querySelector(clickItem).addEventListener('click', async function (e) {
+
         const addCartBtn = e.target;
 
         if (!addCartBtn.hasAttribute('data-id')) return;

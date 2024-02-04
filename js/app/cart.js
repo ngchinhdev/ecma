@@ -2,6 +2,8 @@ import { emptyCart, generateCart, updateBillCart } from "./markups/cartMarkup.js
 import { formatPrice } from "../utils/formatPrice.js";
 import { updateHeader } from "../utils/updateHeader.js";
 
+const cartWrapper = document.querySelector('.wrapper');
+
 function setCart(cart) {
     localStorage.setItem('cart', JSON.stringify(cart));
 }
@@ -29,7 +31,7 @@ function removeItemCart() {
         updateHeader();
         updateBillCart();
 
-        if (!newCart.length) emptyCart();
+        if (!newCart.length) emptyCart(cartWrapper);
     });
 }
 
@@ -95,7 +97,7 @@ function handleChangeQuantity() {
 }
 
 async function init() {
-    const isNotEmpty = await generateCart();
+    const isNotEmpty = await generateCart(cartWrapper);
 
     if (!isNotEmpty) return;
 

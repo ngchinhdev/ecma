@@ -2,8 +2,8 @@ import { BASE_URL, getData } from "./apiData.js";
 
 const USER_URL = 'users';
 
-export async function getUser(id = '') {
-    const users = await getData(`${USER_URL}/${id}`);
+export async function getUser(param = '') {
+    const users = await getData(`${USER_URL}/${param}`);
 
     return users;
 }
@@ -56,4 +56,16 @@ export async function updateRoleUser(idUser, updateRole) {
     } catch (error) {
         console.error('An error occurred when update user: ', error.message);
     }
+}
+
+export async function confirmLogin(email, password) {
+    const user = await getUser(`?email=${email}`);
+
+    if (user[0].role == 1) return 0;
+
+    if (!user[0]) return 1;
+
+    if (user[0].password != password) return 2;
+
+    return user[0];
 }

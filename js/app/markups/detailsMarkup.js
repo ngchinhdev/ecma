@@ -1,5 +1,5 @@
-import { getProducts } from "../api/apiProducts.js";
-import { formatPrice } from "../utils/formatPrice.js";
+import { getProducts } from "../../api/apiProducts.js";
+import { formatPrice } from "../../utils/formatPrice.js";
 
 const imagesContainer = document.querySelector('.detail_images');
 const informationContainer = document.querySelector('.product_details_text');
@@ -51,7 +51,7 @@ export async function generateInfoProduct(idProd) {
                                 </div>
                             </div>
                             <a href="#" data-id=${id} class="primary_btn add_cart">+ GIỎ HÀNG</a>
-                            <a href="checkout.html" class="primary_btn">MUA NGAY</a>
+                            <a href="checkout.html?id=${id}&quantity=1" class="primary_btn buy_now">MUA NGAY</a>
                             <a href="#" class="heart_icon">
                                 <span class="icon_heart_alt">
                                     <i class="fa fa-heart-o" aria-hidden="true"></i>

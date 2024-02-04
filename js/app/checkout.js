@@ -1,3 +1,6 @@
+import { getProducts } from "../api/apiProducts.js";
+import { generateProductToPay } from "./markups/checkoutMarkup.js";
+
 const inputs = document.querySelectorAll(".boxx input");
 const selectBox = document.querySelector(".provinces");
 const fullName = document.querySelector(".name");
@@ -107,3 +110,31 @@ submitBtn.onclick = function (e) {
         window.location.href = 'success-payment.html';
     }
 };
+
+// Show products to pay
+const params = new URLSearchParams(window.location.search);
+const idProd = params.get('id');
+const quantity = params.get('quantity');
+
+const productContainer = document.querySelector('.sum_rows');
+
+async function getProductsToPay() {
+    if (idProd && quantity) {
+        const product = await getProducts(idProd);
+
+        await generateProductToPay([{ ...product, quantityPay: quantity }], productContainer);
+    } else {
+        const cartData = JSON.parse(localStorage.getItem('cart'));
+
+        const promises = cartData.map(async cart => {
+            const product = await getProducts(cart.id);
+
+            return { ...product, quantityPay: cart.quantity };
+        });
+
+        let productCarts = await Promise.all(promises);
+        await generateProductToPay(productCarts, productContainer);
+    }
+}
+
+getProductsToPay();

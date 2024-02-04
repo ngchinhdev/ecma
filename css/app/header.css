@@ -83,6 +83,26 @@ input::-webkit-inner-spin-button {
     z-index: 2;
 }
 
+.logged {
+    cursor: pointer;
+}
+
+.logout {
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    bottom: -36px;
+    font-size: .9rem;
+    padding: 6px 12px;
+    background-color: #fff;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    display: none;
+}
+
+.logout.active {
+    display: block;
+}
+
 /* Main css */
 header .header_top {
     font-size: .9rem;
@@ -94,6 +114,10 @@ header .header_top>div {
     padding-left: 15px;
     padding-right: 15px;
     justify-content: space-between;
+}
+
+header .header_top .right-site {
+    position: relative;
 }
 
 header .socials,
