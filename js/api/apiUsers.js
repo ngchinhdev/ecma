@@ -61,9 +61,9 @@ export async function updateRoleUser(idUser, updateRole) {
 export async function confirmLogin(email, password) {
     const user = await getUser(`?email=${email}`);
 
-    if (user[0].role == 1) return 0;
+    if (!user[0]) return 0;
 
-    if (!user[0]) return 1;
+    if (user[0].role == 1) return 1;
 
     if (user[0].password != password) return 2;
 

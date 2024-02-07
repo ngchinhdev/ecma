@@ -34,56 +34,6 @@
       "id": "7",
       "name": "Gia vị",
       "image": "sotca1.jpg"
-    },
-    {
-      "id": "3baf",
-      "name": "Chinh Nguyen",
-      "image": "cam1.webp"
-    },
-    {
-      "id": "ca85",
-      "name": "Chinh Nguyen",
-      "image": "cam1.webp"
-    },
-    {
-      "id": "d0f4",
-      "name": "Chinh Nguyen",
-      "image": "cam1.webp"
-    },
-    {
-      "id": "c191",
-      "name": "Tiến Diên",
-      "image": "bo2.webp"
-    },
-    {
-      "id": "c106",
-      "name": "Tiến Diên",
-      "image": ""
-    },
-    {
-      "id": "5139",
-      "name": "ftp",
-      "image": ""
-    },
-    {
-      "id": "d33b",
-      "name": "sss",
-      "image": ""
-    },
-    {
-      "id": "d52c",
-      "name": "s",
-      "image": ""
-    },
-    {
-      "id": "5c8a",
-      "name": "",
-      "image": ""
-    },
-    {
-      "id": "ad5c",
-      "name": "Tiến Diên",
-      "image": ""
     }
   ],
   "products": [
@@ -97,10 +47,7 @@
       "likes": 0,
       "purchased": 0,
       "mass": "1kg",
-      "images": [
-        "taophap1.webp",
-        "taophap2.png"
-      ],
+      "images": ["taophap1.webp", "taophap2.png"],
       "description": "Nếu táo Fuji “đốn tim” bạn với chất thịt dày ngọt, táo Ariane “mê hoặc” bạn với độ giòn và thơm đặc trưng, thì Candine hữu cơ chính là giống táo có sự giao thoa một cách tinh tế giữa Fuji và Ariane, được thừa hưởng những điểm mạnh của hai loại táo này. Nhờ vậy, Táo Candine Organic có sắc đỏ sáng bóng, thịt táo mọng nước cùng độ giòn ngọt mà chúng ta khó có thể tìm được sự kết hợp đó ở những giống táo khác."
     },
     {
@@ -113,11 +60,7 @@
       "likes": 0,
       "purchased": 0,
       "mass": "1kg",
-      "images": [
-        "taoenvy1.webp",
-        "taoenvy2.jpg",
-        "taoenvy3.jpg"
-      ],
+      "images": ["taoenvy1.webp", "taoenvy2.jpg", "taoenvy3.jpg"],
       "description": "Envy có quả to tròn, với vỏ màu đỏ điểm thêm các sọc màu vàng Envy  mang trong mình vị ngọt tự nhiên, hương thơm quyến rũ cùng vị giòn tan khiến bạn không thể cưỡng lại được. Táo Envy là một loại trái cây nhập khẩu quen thuộc với mọi người. Được biết đến là giống táo thơm ngon bậc nhất thế giới, táo Envy còn rất tốt cho sức khỏe vời nhiều giá trị dinh dưỡng bất ngờ."
     },
     {
@@ -130,11 +73,7 @@
       "likes": 0,
       "purchased": 0,
       "mass": "1kg",
-      "images": [
-        "otchuong1.webp",
-        "otchuong2.webp",
-        "otchuong3.webp"
-      ],
+      "images": ["otchuong1.webp", "otchuong2.webp", "otchuong3.webp"],
       "description": "Ớt Chuông có nhiều màu như xanh, đỏ, cam, vàng, thân tròn như quả chuông, hương thơm, vị rất giòn ngọt, ít hăng. CÔNG DỤNG • Ớt Chuông giàu Vitamin A, K, C, Kali, Magne, chất khoáng và chất xơ. Hổ trợ tiêu hóa, tốt cho mắt, hệ miễn dịch cao, giảm đường và cholesterol trong máu. Kích thích tuần hoàn máu, ngăn ngừa lão hóa. • Ngoài việc kích thích ngon miệng, nó còn bổ sung canxi và ngăn chặn ung thư khá cao. CÁCH SỬ DỤNG • Trộn salát, ăn tươi sống hoặc xào."
     },
     {
@@ -147,11 +86,7 @@
       "likes": 0,
       "purchased": 0,
       "mass": "1kg",
-      "images": [
-        "caiboxoi1.webp",
-        "caiboxoi2.webp",
-        "caiboxoi3.png"
-      ],
+      "images": ["caiboxoi1.webp", "caiboxoi2.webp", "caiboxoi3.png"],
       "description": "Cải bó xôi còn có tên là rau bina, rau chân vịt, là loại rau được trồng phổ biến ở nước ta. Đây là loại rau thường được sử dụng trong chế biến món ăn hoặc ép nước để uống và có giá trị dinh dưỡng cao. Rau bina được xem như là một 'siêu thực phẩm' nhờ có nguồn vitamin và khoáng chất tuyệt vời đối với sức khỏe."
     },
     {
@@ -164,11 +99,7 @@
       "likes": 0,
       "purchased": 0,
       "mass": "1kg",
-      "images": [
-        "cantay1.webp",
-        "cantay2.jpg",
-        "cantay3.jpg"
-      ],
+      "images": ["cantay1.webp", "cantay2.jpg", "cantay3.jpg"],
       "description": "Cải bó xôi còn có tên là rau bina, rau chân vịt, là loại rau được trồng phổ biến ở nước ta. Đây là loại rau thường được sử dụng trong chế biến món ăn hoặc ép nước để uống và có giá trị dinh dưỡng cao. Rau bina được xem như là một 'siêu thực phẩm' nhờ có nguồn vitamin và khoáng chất tuyệt vời đối với sức khỏe."
     },
     {
@@ -217,11 +148,7 @@
       "likes": 0,
       "purchased": 0,
       "mass": "350g",
-      "images": [
-        "ngucoc1.png",
-        "ngucoc2.png",
-        "ngucoc3.png"
-      ],
+      "images": ["ngucoc1.png", "ngucoc2.png", "ngucoc3.png"],
       "description": "Thức ăn của heo, gà là cám gạo, bột cá biển trộn với rau cắt nhỏ (rau lang, rau muống, chuối tự trồng và đặc biệt bổ sung tảo xoắn). Tất cả nguyên liệu được ủ cùng men vi sinh Probiotic trong 24 giờ. Hằng ngày, heo và gà trong chăn trại được chăn thả tự do với nguồn thức ăn khép kín và đồng thời được uống bổ sung men vi sinh Probiotic để tăng cường đề kháng và phòng dịch bệnh triệt để."
     },
     {
@@ -234,10 +161,7 @@
       "likes": 0,
       "purchased": 0,
       "mass": "1 lít",
-      "images": [
-        "suaym1.jpg",
-        "suaym2.jpg"
-      ],
+      "images": ["suaym1.jpg", "suaym2.jpg"],
       "description": "Thành phần: Nước, yến mạch hữu cơ (16%), bột cacao hữu cơ (1,5%), siro agave hữu cơ (1,5%) dầu hoa hướng dương, tảo biển đỏ Lithothamnium, chất ổn định carrageenan, xanthan, gum), muối. Sản phẩm có chứa Gluten."
     },
     {
@@ -250,11 +174,7 @@
       "likes": 0,
       "purchased": 0,
       "mass": "1 cái",
-      "images": [
-        "banhmi1.png",
-        "banhmi2.png",
-        "banhmi3.png"
-      ],
+      "images": ["banhmi1.png", "banhmi2.png", "banhmi3.png"],
       "description": "Bột mì hữu cơ, nước, men, bột lúa mạch đen hữu cơ nướng, bột lúa mạch đen hữu cơ (1,9%), muối ăn không iốt, hạt lanh hữu cơ (1,8%), bột đậu nành hữu cơ (1,6%), cám lúa mì hữu cơ, lúa mì hữu cơ gluten, bột ngô hữu cơ, bột mì mạch nha hữu cơ, hạt caraway hữu cơ, rau mùi hữu cơ, thì là hữu cơ, chất ổn định: guar gum."
     },
     {
@@ -267,11 +187,7 @@
       "likes": 0,
       "purchased": 0,
       "mass": "500g",
-      "images": [
-        "ngucochat1.jpg",
-        "ngucochat2.jpg",
-        "ngucochat3.jpg"
-      ],
+      "images": ["ngucochat1.jpg", "ngucochat2.jpg", "ngucochat3.jpg"],
       "description": "Granola mix loại hạt siêu nhiều hạt hỗ trợ giảm cân rất tốt. Ăn ngon và no lâu ăn kiêng nhưng bổ sung đầy đủ chất. Tạo cảm giác được ăn đầy đủ nên ít thèm ăn. Khi đói, buồn miệng ăn granola tạo cảm giác no lâu từ đó hỗ trợ giảm cân, giải quyết những lúc đói thèm ăn khi nhịn ăn với chế độ khắc khe. Granola có thể ăn kèm sữa chua, sữa tươi, trái cây, sinh tố, hoặc ăn vã không đã ngon lắm rồi. Các loại hạt thơm bùi giòn tan xen lẫn vị chua nhẹ từ Nam việt quất và ngòn ngọt thơm thanh của nho vàng khô, mật ong, nếu đã lỡ ăn bạn sẽ không cưỡng lại được. Nếu bạn không quen ăn các loại đậu hạt, ăn từng món nguyên hạt thì hãy ăn thử granola bạn sẽ ước mình biết nó sớm hơn."
     },
     {
@@ -284,10 +200,7 @@
       "likes": 0,
       "purchased": 0,
       "mass": "1kg",
-      "images": [
-        "muoibien1.png",
-        "muoibien2.jpg"
-      ],
+      "images": ["muoibien1.png", "muoibien2.jpg"],
       "description": "Muối biển hảo hạng không chỉ là muối – nguồn gốc và loại muối sản xuất mới là yếu tố quyết định. Muối biển càng tinh khiết càng quý. Vàng trắng! hạt mịn không iốt. Đảm bảo không có bất kỳ chất phụ gia nào cung cấp các khoáng chất và nguyên tố vi lượng quan trọng Muối biển hảo hạng của Byodo, dạng hạt mịn, rất lý tưởng để nấu và nêm gia vị cho các món ăn hảo hạng và là sản phẩm cần có trong mọi căn bếp dành cho người sành ăn. Khi bắt đầu sản xuất, nước mặn được làm sạch và chứa đầy nước biển bằng máy bơm. Nước biển được chuyển từ hồ này sang hồ khác trong khoảng thời gian vài tháng. Dưới tác động của nắng và gió, nứớc biển bốc hơi và để lại một lớp muối tinh khiết. Ngay sau đó, nó được thu hoạch."
     },
     {
@@ -300,10 +213,7 @@
       "likes": 0,
       "purchased": 0,
       "mass": "250 ml",
-      "images": [
-        "daubo1.jpg",
-        "daubo2.jpg"
-      ],
+      "images": ["daubo1.jpg", "daubo2.jpg"],
       "description": "Dầu Bơ của Il Nutrimento là một loại dầu thô, thu được mà không cần làm nóng bơ hoặc máy ép trước khi ép, và không cần thêm nhiệt trong quá trình chiết xuất. Được lấy từ những quả bơ ngon ngọt được tuyển chọn kĩ càng và đã được gọt vỏ trước đó."
     },
     {
@@ -316,11 +226,7 @@
       "likes": 0,
       "purchased": 0,
       "mass": "420g",
-      "images": [
-        "sotca1.jpg",
-        "sotca2.jpg",
-        "sotca3.jpg"
-      ],
+      "images": ["sotca1.jpg", "sotca2.jpg", "sotca3.jpg"],
       "description": "Cà chua được mệnh danh là một nhà máy dinh dưỡng vì nó cung cấp rất nhiều thành phần có lợi cho sức khỏe. Cà chua rất giàu vitamin A, C, K, vitamin B6, kali, folate, thiamin, magiê, niacin, đồng và phốt pho, là những vi chất cần thiết để duy trì một sức khỏe tốt. Cà chua chứa rất ít carbohydrate nên giúp làm giảm lượng đường trong máu. Cà chua có chứa vitamin K và canxi giúp giữ cho xương của bạn khỏe mạnh và chống loãng xương. Nước sốt cà chua giàu chất chống oxy hóa có ích cho probiotic trong đường ruột Các chất chống oxy hóa từ nước sốt cà chua đã làm tăng tác dụng tích cực của Lactobacillus reuteri. Và nước sốt cà chua nấu chín hiệu quả nhất. Nấu chín nước sốt cà chua làm biến đổi sự hiện diện của lycopene trong cà chua (quá trình đồng phân cis-trans), từ đó giúp duy trì tính toàn vẹn của chất chống oxy hóa này khi bị tiêu hóa, cho phép cơ thể nhận hấp thụ nhiều hơn."
     },
     {
@@ -333,11 +239,7 @@
       "likes": 0,
       "purchased": 0,
       "mass": "1kg",
-      "images": [
-        "bo1.webp",
-        "bo2.webp",
-        "bo3.jpg"
-      ],
+      "images": ["bo1.webp", "bo2.webp", "bo3.jpg"],
       "description": "Theo các chuyên gia, tốt nhất nên dùng bơ trước bữa ăn từ 1 – 2 tiếng để giảm cân, ăn sau bữa ăn 1 – 2 tiếng nếu bạn muốn tăng cân. Bơ 034 ngon nhất khi chín dùng ngay. Bạn có thể dùng muỗng để nạo thịt hoặc lột vỏ, cắt bơ thành từng miếng vừa ăn."
     },
     {
@@ -350,11 +252,7 @@
       "likes": 0,
       "purchased": 0,
       "mass": "1kg",
-      "images": [
-        "cam1.webp",
-        "cam2.webp",
-        "cam3.jpg"
-      ],
+      "images": ["cam1.webp", "cam2.webp", "cam3.jpg"],
       "description": "Vitamin C bảo vệ cơ thể bằng rất nhiều cách, chủ yếu qua các chức năng như chống oxy hóa, tổng hợp collagen, hệ tim mạch, hệ miễn dịch..… Nguồn vitamin C có nhiều trong các loại trái cây như cam, quýt, ổi xanh, dâu tây, cà chua, khoai lang, khoai tây, bông cải xanh, ớt xanh. Ai cũng biết cam là loại quả ngon và cung cấp một lượng vitamin C phong phú được các bà nội trợ tin dùng. Tuy nhiên, cam còn là một vị thuốc chữa bệnh tuyệt vời. Người ta tính ra trong mỗi 100 gram quả cam có chứa 88,8 g nước, 585 microgram carotene – một loại vitamin chống oxy hóa, 40 mg vitamin C, 108 mg kali, 34 mg canxi. Ngoài ra, với trọng lượng cam tương tự còn có chứa 1,4 g chất xơ,23 mg photpho, 0,4 mg sắt và giá trị năng lượng là 37 Kcal."
     }
   ],
@@ -435,6 +333,33 @@
     {
       "id": "2",
       "name": "user"
+    }
+  ],
+  "orders": [
+    {
+      "id": "1",
+      "userId": "1",
+      "products": [
+        {
+          "id": "2",
+          "quantity": "4",
+          "price": "79500"
+        },
+        {
+          "id": "5",
+          "quantity": "8",
+          "price": "99500"
+        }
+      ],
+      "address": "Go Vap, HCM",
+      "phoneNumber": "0999888777",
+      "customerName": "Chinh",
+      "province": "Lam Dong",
+      "status": "1",
+      "paymentMethod": "1",
+      "note": "hi",
+      "email": "chinhnguyennn24@gmail.com",
+      "orderAt": "2023-11-22T00:00:00.000Z"
     }
   ]
 }

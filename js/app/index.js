@@ -35,7 +35,7 @@ async function init() {
     handleNavControl(orgProducts);
     addToCart();
 
-    generateBlogs(blogContainer, blogs);
+    generateBlogs(blogContainer, blogs.slice(0, 3));
 }
 
 init()

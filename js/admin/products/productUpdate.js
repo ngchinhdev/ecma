@@ -96,7 +96,6 @@ export default async function handleUpdateProduct(idProd, container) {
         if (!isAdd) return;
 
         const newImages = formData.images?.map(img => img.name);
-
         await updateProd(dataOld.id, {
             ...formData,
             images: !newImages?.length ? formData.images : newImages,

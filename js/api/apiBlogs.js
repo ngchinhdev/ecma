@@ -28,6 +28,42 @@ export async function getCategoriesBlog() {
     return [...categoriesBlog];
 }
 
+export async function addBlog(newBlog) {
+    try {
+        const response = await fetch(`${BASE_URL}/${BLOG_URL}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(newBlog),
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to add a new blog');
+        }
+    } catch (error) {
+        console.error('An error occurred when add new blog:', error.message);
+    }
+}
+
+export async function updateBlog(idBlog, updateBlog) {
+    try {
+        const response = await fetch(`${BASE_URL}/${BLOG_URL}/${idBlog}`, {
+            method: 'PATCH',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(updateBlog),
+        });
+
+        if (!response.ok) {
+            throw new Error('Failed to update item');
+        }
+    } catch (error) {
+        console.error('An error occurred when update category:', error.message);
+    }
+}
+
 export async function deleteBlog(idBlog) {
     try {
         const response = await fetch(`${BASE_URL}/${BLOG_URL}/${idBlog}`, {

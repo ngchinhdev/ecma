@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./images/mango-fav.webp">
     <link rel="stylesheet" href="css/app/header.css">
     <link rel="stylesheet" href="css/app/footer.css">
     <link rel="stylesheet" href="css/app/checkout.css">
@@ -132,23 +133,23 @@
                 <div class="main_form">
                     <h4>Thông tin thanh toán</h4>
                     <div class="box_name boxx">
-                        <input type="text" placeholder="Họ và tên" class="name">
+                        <input type="text" name="customerName" placeholder="Họ và tên" class="name">
                         <small class="error"></small>
                     </div>
                     <div class="box_phone boxx">
-                        <input type="text" placeholder="Số điện thoại" class="phone_num">
+                        <input type="text" name="phoneNumber" placeholder="Số điện thoại" class="phone_num">
                         <small class="error"></small>
                     </div>
                     <div class="box_email boxx">
-                        <input type="text" placeholder="Email" class="email">
+                        <input type="text" placeholder="Email" name="email" class="email">
                         <small class="error"></small>
                     </div>
                     <div class="box_location boxx">
-                        <input type="text" placeholder="Địa chỉ" class="address">
+                        <input type="text" placeholder="Địa chỉ" name="address" class="address">
                         <small class="error"></small>
                     </div>
                     <div class="box_province boxx">
-                        <select class="provinces">
+                        <select name="province" class="provinces">
                             <option value="Tỉnh / Thành phố">Tỉnh / Thành phố</option>
                             <option value="An Giang">An Giang</option>
                             <option value="Bà Rịa-Vũng Tàu">Bà Rịa-Vũng Tàu</option>
@@ -217,7 +218,7 @@
                         <small class="error"></small>
                     </div>
                     <h5>Ghi chú đơn hàng (Tùy chọn)</h5>
-                    <textarea placeholder="Ví dụ: thời gian hay chỉ dẫn địa điểm giao hàng chi tiết hơn." name=""
+                    <textarea placeholder="Ví dụ: thời gian hay chỉ dẫn địa điểm giao hàng chi tiết hơn." name="note"
                         id=""></textarea>
                     <div class="sum_rows">
                         <div class="sum s1">
@@ -253,11 +254,11 @@
                         </div>
                     </div>
                     <div class="payment">
-                        <input type="radio" id="banking" name="payment" checked>
+                        <input type="radio" value="0" id="banking" name="paymentMethod" checked>
                         <label for="banking">Chuyển khoản ngân hàng</label>
                     </div>
                     <div class="payment">
-                        <input type="radio" id="cash" name="payment">
+                        <input type="radio" value="1" id="cash" name="paymentMethod">
                         <label for="cash">Trả tiền mặt khi nhận hàng</label>
                     </div>
                     <hr>

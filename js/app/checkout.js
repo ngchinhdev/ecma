@@ -1,14 +1,13 @@
+import { createNewOrder } from "../api/apiOrders.js";
 import { getProducts } from "../api/apiProducts.js";
 import { generateProductToPay } from "./markups/checkoutMarkup.js";
 
-const inputs = document.querySelectorAll(".boxx input");
-const selectBox = document.querySelector(".provinces");
 const fullName = document.querySelector(".name");
 const phoneNum = document.querySelector(".phone_num");
 const email = document.querySelector("input.email");
 const address = document.querySelector(".address");
 const provinces = document.querySelector(".provinces");
-const submitBtn = document.querySelector(".buy_btn");
+const form = document.querySelector("form");
 
 function isError(input, message) {
     let siblingElem = input.nextElementSibling;
@@ -97,31 +96,19 @@ function checkProvinces(input) {
     return isEmty;
 }
 
-submitBtn.onclick = function (e) {
-    e.preventDefault();
-    if (!(checkName(fullName) && checkPhoneNumber(phoneNum) && checkEmail(email) &&
-        checkAddress(address) && checkProvinces(provinces))) {
-        checkName(fullName);
-        checkPhoneNumber(phoneNum);
-        checkEmail(email);
-        checkAddress(address);
-        checkProvinces(provinces);
-    } else {
-        window.location.href = 'success-payment.html';
-    }
-};
-
 // Show products to pay
 const params = new URLSearchParams(window.location.search);
 const idProd = params.get('id');
 const quantity = params.get('quantity');
 
 const productContainer = document.querySelector('.sum_rows');
+let productsToPay = [];
 
 async function getProductsToPay() {
     if (idProd && quantity) {
         const product = await getProducts(idProd);
 
+        productsToPay = [{ ...product, quantityPay: quantity }];
         await generateProductToPay([{ ...product, quantityPay: quantity }], productContainer);
     } else {
         const cartData = JSON.parse(localStorage.getItem('cart'));
@@ -133,8 +120,43 @@ async function getProductsToPay() {
         });
 
         let productCarts = await Promise.all(promises);
+
+        productsToPay = productCarts;
         await generateProductToPay(productCarts, productContainer);
     }
+
+    return productsToPay;
 }
 
 getProductsToPay();
+
+form.onsubmit = async function (e) {
+    e.preventDefault();
+    if (!(checkName(fullName) && checkPhoneNumber(phoneNum) && checkEmail(email) &&
+        checkAddress(address) && checkProvinces(provinces))) {
+        checkName(fullName);
+        checkPhoneNumber(phoneNum);
+        checkEmail(email);
+        checkAddress(address);
+        checkProvinces(provinces);
+    } else {
+        const formData = new FormData(form);
+
+        const data = Object.fromEntries(formData);
+
+        const payloadData = {
+            ...data,
+            userId: 1,
+            orderAt: new Date().toISOString(),
+            status: 0,
+            products: productsToPay.map(prod => ({
+                id: prod.id,
+                quantity: prod.quantityPay,
+                price: prod.price
+            }))
+        };
+
+        await createNewOrder(payloadData);
+        // window.location.href = 'success-payment.html';
+    }
+};

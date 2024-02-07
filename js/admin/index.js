@@ -1,10 +1,14 @@
 import initBlogs from "./blogs/blogRow.js";
 import initCategories from "./categories/categoryRow.js";
+import initDashboard from "./dashboard/dashboardView.js";
+import initOrders from "./orders/orderInfoRow.js";
 import initProducts from "./products/productRow.js";
+import initRoles from "./roles/roleRow.js";
 import initUsers from "./users/userRow.js";
 
 const sideBar = document.querySelector('.sidebar_menu');
 const mainContainer = document.querySelector('main');
+await initDashboard(mainContainer);
 
 // Side bar handle
 sideBar.addEventListener('click', function (e) {
@@ -37,5 +41,17 @@ async function handleRenderContent(page) {
 
     if (page === 'blog') {
         await initBlogs(mainContainer);
+    }
+
+    if (page === 'role') {
+        await initRoles(mainContainer);
+    }
+
+    if (page === 'dashboard') {
+        await initDashboard(mainContainer);
+    }
+
+    if (page === 'order') {
+        await initOrders(mainContainer);
     }
 }

@@ -112,9 +112,9 @@ formLogin && formLogin.addEventListener('submit', async function (e) {
     } else {
         const result = await confirmLogin(email.value, password.value);
 
-        if (result === 0) window.location.href = 'admin.html';
+        if (result === 0) checkEmail(email, true);
 
-        if (result === 1) checkEmail(email, true);
+        if (result === 1) window.location.href = 'admin.html';
 
         if (result === 2) checkPassword(password, true);
 

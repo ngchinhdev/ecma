@@ -38,12 +38,10 @@ header {
     padding-left: 40px;
 }
 
-header .left_site .search-box {
-    border: 1px solid #7fad39;
-    border-radius: 20px;
-    position: relative;
-    padding: 0 20px;
-    width: 400px;
+header .left_site i {
+    font-size: 2rem;
+    cursor: pointer;
+    color: #7fad39;
 }
 
 header .left_site .search-box input {
@@ -156,6 +154,7 @@ aside .sidebar_menu>li span {
 
 aside .sidebar_menu>li span i {
     width: 30px;
+    pointer-events: none;
 }
 
 aside .sidebar_menu .mar {
@@ -313,8 +312,13 @@ main table .last-td span {
     border-radius: 4px;
 }
 
-main table td .change-btn {
+main table td .change-btn,
+main table td .detail-btn {
     background-color: blue;
+}
+
+main table td .detail-btn {
+    width: 60px;
 }
 
 main table td .del-btn {
@@ -329,6 +333,17 @@ main table td .del-btn {
     -webkit-line-clamp: 2;
     line-clamp: 2;
     -webkit-box-orient: vertical;
+}
+
+main .sum-order {
+    text-align: right;
+    margin: 2rem 0;
+    font-size: 1.2rem;
+}
+
+main .sum-order span {
+    font-weight: 600;
+    color: #7fad39;
 }
 
 main table td img.ctn {
@@ -452,6 +467,180 @@ textarea {
     background: #7fad39;
     border-color: #7fad39;
     color: #ffffff;
+}
+
+#dashboard {
+    margin-top: 30px;
+}
+
+#dashboard h1 {
+    font-size: 26px;
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+
+#dashboard .four-col {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 150px;
+    gap: 20px;
+}
+
+#dashboard .best-inventory {
+    position: relative;
+    overflow-y: scroll;
+}
+
+#dashboard .best-inventory .title {
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+#dashboard .best-inventory::-webkit-scrollbar {
+    display: none;
+}
+
+#dashboard .four-col .col {
+    overflow: hidden;
+    padding: 16px;
+    position: relative;
+    border-radius: 6px;
+    color: white;
+    /* width: 230px; */
+}
+
+#dashboard .four-col .col.col-1 {
+    background-color: #218cff;
+}
+
+#dashboard .four-col .col.col-2 {
+    background-color: #dc3545;
+}
+
+#dashboard .four-col .col.col-3 {
+    background-color: #28a745;
+}
+
+#dashboard .four-col .col.col-4 {
+    background-color: #d29e04;
+}
+
+#dashboard .four-col .col .icon>i {
+    position: absolute;
+    font-size: 60px;
+    right: 20px;
+    top: 20%;
+    opacity: 0.3;
+    color: #333;
+}
+
+#dashboard .four-col .col .number {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#dashboard .four-col .col .title {
+    font-weight: 500;
+}
+
+#dashboard .four-col .col .more-info {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    left: 0;
+    padding: 6px 0;
+    cursor: pointer;
+}
+
+#dashboard .four-col .col-1 .more-info {
+    background-color: #2769af;
+}
+
+#dashboard .four-col .col-2 .more-info {
+    background-color: #be2534;
+}
+
+#dashboard .four-col .col-3 .more-info {
+    background-color: #20913a;
+}
+
+#dashboard .four-col .col-4 .more-info {
+    background-color: #b58800;
+}
+
+#dashboard .two-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 260px;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+#dashboard .two-col .col {
+    background-color: #fff;
+    border-radius: 6px;
+    border: 0.5px #7d6f19 solid;
+}
+
+
+#dashboard .two-col .col .title h3 {
+    padding: 6px 20px;
+    white-space: 2px;
+    color: #fff;
+    background-color: #218CFF;
+    text-align: center;
+}
+
+#dashboard .content.chart-box {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: .5rem;
+}
+
+canvas#chart-exam {
+    width: 200px !important;
+    height: 200px !important;
+    display: block !important;
+    box-sizing: border-box !important;
+}
+
+#dashboard .two-col .col table {
+    width: 100%;
+    margin-top: 4px;
+}
+
+#dashboard .two-col .col .content {
+    padding: 0 22px;
+}
+
+#dashboard .hints {
+    padding-top: 20px;
+}
+
+#dashboard .hints .row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+}
+
+#dashboard .hints .color {
+    width: 20px;
+    height: 20px;
+    margin-right: 1rem;
+}
+
+#dashboard .two-col .col .content li {
+    margin-bottom: 8px;
+}
+
+#dashboard .two-col .col .content .name-prod {
+    max-width: 180px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .loader-wrap {

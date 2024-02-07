@@ -1,6 +1,8 @@
+import { addBlog, getCategoriesBlog } from "../../api/apiBlogs.js";
 import { loader2 } from "../../utils/loader.js";
+import initBlogs from "./blogRow.js";
 
-function generateAddMarkup(container) {
+function generateAddMarkup(container, blogCategories) {
     const markup = `<form class="sub_main" action="" method="post">
                         <div class="nav">
                             <div class="above_table">
@@ -23,7 +25,7 @@ function generateAddMarkup(container) {
                             <div class="field">
                                 <label for="category">Danh mục</label>
                                 <select name="category" id="category">
-                                    ${[].map(cate => `<option value="${cate.id}">${cate.name}</option>`).join('')}
+                                    ${blogCategories.map(cate => `<option value="${cate.id}">${cate.name}</option>`).join('')}
                                 </select>
                             </div>
                             <div class="field">
@@ -43,7 +45,8 @@ function generateAddMarkup(container) {
 export default async function handleAddBlog(container) {
     container.innerHTML = '';
     await loader2(container, 500);
-    generateAddMarkup(container);
+    const blogCategories = await getCategoriesBlog();
+    generateAddMarkup(container, blogCategories);
 
     const formAdd = document.querySelector('form');
 
@@ -53,14 +56,24 @@ export default async function handleAddBlog(container) {
         const form = new FormData(formAdd);
         const formData = Object.fromEntries(form);
 
-        if (!formData.name || !formData.image.name) {
+        if (!formData.title || !formData.contents || !formData.image.name) {
             alert('Vui lòng nhập đầy đủ các trường!');
             return;
         }
 
-        const isAdd = confirm('Xác nhận thêm danh mục?');
+        const isAdd = confirm('Xác nhận thêm bài viết?');
 
         if (!isAdd) return;
+
+        await addBlog({
+            title: formData.title,
+            contents: formData.contents,
+            thumbnail: formData.image.name,
+            createAt: new Date().toISOString(),
+            comments: Math.ceil(Math.random() * 100)
+        });
+
+        initBlogs(container);
     });
 }
 

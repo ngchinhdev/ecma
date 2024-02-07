@@ -94,7 +94,7 @@ export default async function initUsers(container, curPage = 0) {
 
         if (btn.classList.contains('change-role')) {
             const idUser = btn.dataset.id;
-            await handleUpdateRole(idUser, btn.value);
+            await handleUpdateRole(idUser, btn.value, container);
         }
     });
 

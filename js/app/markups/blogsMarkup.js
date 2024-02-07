@@ -1,15 +1,6 @@
 import { getBlogs, getCategoriesBlog } from "../../api/apiBlogs.js";
+import { formatDate } from "../../utils/helper.js";
 import { loader } from "../../utils/loader.js";
-
-function formatDate(value) {
-    const date = new Date(value);
-
-    const day = date.getDay();
-    const month = date.getMonth() + 1;
-    const year = date.getFullYear();
-
-    return `${day < 9 ? '0' + day : day}/${month < 9 ? '0' + month : month}/${year}`;
-}
 
 export async function generateCategoriesBlog(container) {
     let markup = '<li class="active" data-blog="all">Tất cả</li>';
@@ -33,7 +24,7 @@ export async function generateBlogs(container, blogs) {
     let markup = '';
 
     blogs.map(blog => {
-        const curCate = categoriesBlog.find(cate => +cate.id === blog.category);
+        const curCate = categoriesBlog.find(cate => +cate.id == blog.category);
 
         markup += `<div class="blog_col">
                     <div class="blog_item">
