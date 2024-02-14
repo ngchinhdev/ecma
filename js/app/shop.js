@@ -1,6 +1,6 @@
 import { getProducts } from "../api/apiProducts.js";
 import { generateProducts } from "./markups/productsMarkup.js";
-import { addToCart } from "../utils/addToCart.js";
+import { handleLikeAddCart } from "../utils/addToCart.js";
 import { filterByDiscount, filterByPrice, filterIncDec, handlePagination, updateTotalResults } from "../utils/filterProducts.js";
 
 const shopProductContainer = document.querySelector('.list_prod');
@@ -15,7 +15,7 @@ async function init() {
     updateTotalResults(orgProducts.length);
     handlePagination(paginationContainer, orgProducts);
 
-    addToCart();
+    handleLikeAddCart();
 
     filterIncDec(orgProducts, filteredProducts);
     filterByPrice(orgProducts, filteredProducts);

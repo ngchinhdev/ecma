@@ -118,8 +118,8 @@ formLogin && formLogin.addEventListener('submit', async function (e) {
 
         if (result === 2) checkPassword(password, true);
 
-        if (result.name) {
-            localStorage.setItem('isLogin', `${result.name.split(' ')[0]}`);
+        if (result.id) {
+            localStorage.setItem('isLogin', `${result.id}`);
             window.location.href = 'index.html';
         }
     }

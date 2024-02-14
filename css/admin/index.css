@@ -366,8 +366,66 @@ main .sub_main.ib {
     display: inline-block;
 }
 
-main .sub_main:not(.ib) {
-    /* width: 90%; */
+.col-first {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 150px;
+    gap: 20px;
+    border: none !important;
+    background-color: transparent !important;
+}
+
+.col-first .col {
+    overflow: hidden;
+    padding: 16px;
+    position: relative;
+    border-radius: 6px;
+    color: white;
+    border: none !important;
+}
+
+.col-first .col:first-child {
+    background-color: #8b4593 !important;
+}
+
+.col-first .col:first-child .more-info {
+    background-color: #74237d !important;
+}
+
+.col-first .col:nth-child(2) {
+    background-color: #376761 !important;
+}
+
+.col-first .col:nth-child(2) .more-info {
+    background-color: #214d48 !important;
+}
+
+.col-first .col .number {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.col-first .col .title {
+    font-weight: 500;
+}
+
+.col-first .col .icon>i {
+    position: absolute;
+    font-size: 60px;
+    right: 20px;
+    top: 20%;
+    opacity: 0.3;
+    color: #333;
+}
+
+.col-first .col .more-info {
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    left: 0;
+    padding: 6px 0;
+    cursor: pointer;
 }
 
 .add_common {
@@ -589,7 +647,7 @@ textarea {
     padding: 6px 20px;
     white-space: 2px;
     color: #fff;
-    background-color: #218CFF;
+    background-color: #ff8121;
     text-align: center;
 }
 

@@ -27,7 +27,7 @@ async function generateMarkup(productsData, startIdx, container) {
                     <th>#</th>
                     <th>Tên sản phẩm</th>
                     <th>Giá</th>
-                    <th>Lượt</th>
+                    <th>Lượt mua</th>
                     <th>Số lượng</th>
                     <th>Hình ảnh</th>
                     <th>Mô tả</th>
@@ -52,9 +52,7 @@ function markupRow(product, index, startIdx) {
                     ${formatPrice(product.price)} / ${product.mass}
                 </td>
                 <td>
-                    ${product.likes} 🩷
-                    <br />
-                    ${product.purchased} 💸
+                    ${product.purchased} 
                 </td>
                 <td>
                     ${product.quantity}

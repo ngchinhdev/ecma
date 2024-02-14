@@ -1,4 +1,5 @@
 import { getProducts } from "../../api/apiProducts.js";
+import { isAlreadyLiked } from "../../utils/addLike.js";
 import { formatPrice } from "../../utils/formatPrice.js";
 
 const imagesContainer = document.querySelector('.detail_images');
@@ -50,14 +51,14 @@ export async function generateInfoProduct(idProd) {
                                     </div>
                                 </div>
                             </div>
-                            <a href="#" data-id=${id} class="primary_btn add_cart">+ GIỎ HÀNG</a>
+                            <a href="#" data-cart=${id} class="primary_btn add_cart">+ GIỎ HÀNG</a>
                             <a href="checkout.html?id=${id}&quantity=1" class="primary_btn buy_now">MUA NGAY</a>
-                            <a href="#" class="heart_icon">
+                            <a href="#" class="heart_icon" data-like=${id}>
                                 <span class="icon_heart_alt">
-                                    <i class="fa fa-heart-o" aria-hidden="true"></i>
-                                </span>
-                            </a>`;
+                                    <i class="fa fa-heart ${isAlreadyLiked(id) ? 'active' : ''}" aria-hidden="true"></i>
+                                </span >
+                            </a > `;
 
     informationContainer.innerHTML = '';
     informationContainer.insertAdjacentHTML('beforeend', informationMarkup);
-};
+};;

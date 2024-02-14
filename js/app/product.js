@@ -1,7 +1,7 @@
 import { getProducts } from "../api/apiProducts.js";
 import { generateNavigation } from "./markups/navigationMarkup.js";
 import { generateProducts, noResult } from "./markups/productsMarkup.js";
-import { addToCart } from "../utils/addToCart.js";
+import { handleLikeAddCart } from "../utils/addToCart.js";
 import { filterByPrice, filterIncDec, handlePagination, updateTotalResults } from "../utils/filterProducts.js";
 
 const productContainer = document.querySelector('.list_prod');
@@ -49,8 +49,7 @@ async function init() {
         filterByPrice(filteredProducts);
     }
 
-    addToCart();
-
+    handleLikeAddCart();
 }
 
 init();

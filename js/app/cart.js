@@ -13,7 +13,7 @@ export function getCart() {
 }
 
 function removeItemCart() {
-    document.querySelector('table tbody').addEventListener('click', function (e) {
+    document.querySelector('table.tb-cart tbody').addEventListener('click', function (e) {
         const deleteBtn = e.target;
 
         if (!deleteBtn.hasAttribute('data-id')) return;
@@ -60,7 +60,7 @@ function adjustQuantityItem(btn, isInc) {
 }
 
 function handleClickQuantity() {
-    document.querySelector('table tbody').addEventListener('click', function (e) {
+    document.querySelector('table.tb-cart tbody').addEventListener('click', function (e) {
         const btn = e.target;
 
         if (btn.hasAttribute('data-inc')) {
@@ -72,7 +72,7 @@ function handleClickQuantity() {
 }
 
 function handleChangeQuantity() {
-    document.querySelector('table tbody').addEventListener('change', function (e) {
+    document.querySelector('table.tb-cart tbody').addEventListener('change', function (e) {
         const inputElement = e.target;
 
         if (inputElement.tagName === 'INPUT') {

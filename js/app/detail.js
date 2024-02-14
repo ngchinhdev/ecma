@@ -4,6 +4,7 @@ import { generateNavigation } from "./markups/navigationMarkup.js";
 import { generateProducts } from "./markups/productsMarkup.js";
 import { addToCart } from "../utils/addToCart.js";
 import { updateHeader } from "../utils/updateHeader.js";
+import { handleClickLike, handleToggleLike } from "../utils/addLike.js";
 
 const relatedProductContainer = document.querySelector('.list_prod');
 
@@ -40,6 +41,40 @@ function handleControl() {
     }));
 }
 
+function handleLikeInDetail() {
+    const heartBtn = document.querySelector('.heart_icon');
+
+    heartBtn.addEventListener('click', async function (e) {
+        e.preventDefault();
+
+        handleToggleLike(heartBtn.querySelector('i'));
+        await handleClickLike(+heartBtn.dataset.like);
+    });
+}
+
+function handleLikeAddCartRelated() {
+    document.querySelector('.list_prod').addEventListener('click', async function (e) {
+        const btn = e.target;
+
+        if (btn.hasAttribute('data-like')) {
+            e.preventDefault();
+
+            const curId = +btn.dataset.like;
+            handleToggleLike(btn);
+
+            await handleClickLike(curId);
+        }
+
+        if (btn.hasAttribute('data-cart')) {
+            e.preventDefault();
+
+            const curId = +btn.dataset.cart;
+
+            await addToCart(curId);
+        }
+    });
+}
+
 async function init() {
     // Generate details product
     await generateNavigation(cateProd);
@@ -47,48 +82,20 @@ async function init() {
     await generateInfoProduct(idProd);
 
     handleControl();
-    // addToCart('.add_cart', currQuantity); Does not work?????
+    handleLikeInDetail();
+    handleLikeAddCartRelated();
 
     document.querySelector('.add_cart').addEventListener('click', async function (e) {
         const addCartBtn = e.target;
 
-        if (!addCartBtn.hasAttribute('data-id')) return;
+        if (!addCartBtn.hasAttribute('data-cart')) return;
 
         e.preventDefault();
 
-        const curId = +addCartBtn.dataset.id;
+        const curId = +addCartBtn.dataset.cart;
 
-        const { price } = await getProducts(curId);
-
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        let itemExists = false;
-
-        for (let i = 0; i < cart.length; i++) {
-            const item = cart[i];
-
-            if (item.id === curId) {
-                item.quantity += currQuantity;
-                itemExists = true;
-                break;
-            }
-        }
-
-        if (!itemExists) {
-            const newItem = {
-                id: curId,
-                quantity: currQuantity,
-                price
-            };
-            cart.push(newItem);
-        }
-
-        localStorage.setItem('cart', JSON.stringify(cart));
-
-        updateHeader();
+        addToCart(curId, currQuantity);
     });
-
-
-
 
     // Generate related products
     const orgProducts = await getProducts();
@@ -96,7 +103,6 @@ async function init() {
     const filteredProducts = orgProducts.filter(product => product.category === cateProd && product.id !== idProd);
 
     await generateProducts(relatedProductContainer, filteredProducts.slice(0, 4));
-    addToCart();
 }
 
 await init();

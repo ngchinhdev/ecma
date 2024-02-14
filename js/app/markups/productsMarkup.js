@@ -1,4 +1,5 @@
 import { getProducts } from "../../api/apiProducts.js";
+import { isAlreadyLiked } from "../../utils/addLike.js";
 import { formatPrice } from "../../utils/formatPrice.js";
 import { loader } from "../../utils/loader.js";
 
@@ -43,9 +44,9 @@ export async function generateProducts(container, filteredProducts) {
                         <div class="item_pic">
                             <img src="./images/products/${images[0]}" alt="${name}">
                             <ul class="item_pic_hover">
-                                <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                <li><a href="#" class="${isAlreadyLiked(id) ? 'active' : ''}" data-like=${id}><i class="fa fa-heart"></i></a></li>
                                 <li><a href="detail.html?cate=${category}&id=${id}"><i class="fa fa-eye" aria-hidden="true"></i></a></li>
-                                <li><a href="#" data-id=${id}><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="#" data-cart=${id}><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="item_text">

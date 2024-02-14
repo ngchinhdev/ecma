@@ -4,7 +4,7 @@ import { formatPrice } from "../../utils/formatPrice.js";
 import { loader } from "../../utils/loader.js";
 
 export function emptyCart(container) {
-    container.innerText = '';
+    container.innerHTML = '';
     container.insertAdjacentHTML('beforeend', `<div class="empty_cart">
                                                 <img src="../images/empty-cart.png" />
                                                 <p>Chưa có sản phẩm nào trong giỏ hàng.</p>
@@ -20,12 +20,12 @@ export async function generateCart(container) {
     const cartData = getCart();
 
     if (!cartData.length) {
-        emptyCart();
+        emptyCart(container);
         return false;
     }
     const markup = `<section class="cart">
                     <div class="container side_pad">
-                        <table>
+                        <table class="tb-cart">
                             <thead>
                                 <tr>
                                     <th class="prod">Sản phẩm</th>
@@ -45,11 +45,7 @@ export async function generateCart(container) {
                 <section class="discount_bill">
                     <div class="container">
                         <div class="shoping_discount">
-                            <h5>Mã giảm giá</h5>
-                            <form action="#">
-                                <input type="text" placeholder="Nhập mã giảm giá của bạn">
-                                <button type="submit" class="site-btn">Áp dụng</button>
-                            </form>
+                           
                         </div>
                         <div class="shoping_checkout">
                             <h5>Tổng thanh toán</h5>

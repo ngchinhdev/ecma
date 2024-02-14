@@ -1,43 +1,56 @@
 import { getProducts } from "../api/apiProducts.js";
+import { handleClickLike, handleToggleLike } from "./addLike.js";
 import { updateHeader } from "./updateHeader.js";
 
-export function addToCart(clickItem = '.list_prod', quantity = 1) {
-    document.querySelector(clickItem).addEventListener('click', async function (e) {
+export async function addToCart(curId, quantity = 1) {
+    const { price } = await getProducts(curId);
 
-        const addCartBtn = e.target;
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let itemExists = false;
 
-        if (!addCartBtn.hasAttribute('data-id')) return;
+    for (let i = 0; i < cart.length; i++) {
+        const item = cart[i];
 
-        e.preventDefault();
+        if (item.id === curId) {
+            item.quantity += quantity;
+            itemExists = true;
+            break;
+        }
+    }
 
-        const curId = +addCartBtn.dataset.id;
+    if (!itemExists) {
+        const newItem = {
+            id: curId,
+            quantity: quantity,
+            price
+        };
+        cart.push(newItem);
+    }
 
-        const { price } = await getProducts(curId);
+    localStorage.setItem('cart', JSON.stringify(cart));
 
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        let itemExists = false;
+    updateHeader();
+};
 
-        for (let i = 0; i < cart.length; i++) {
-            const item = cart[i];
+export function handleLikeAddCart() {
+    document.querySelector('.list_prod').addEventListener('click', async function (e) {
+        const btn = e.target;
 
-            if (item.id === curId) {
-                item.quantity += quantity;
-                itemExists = true;
-                break;
-            }
+        if (btn.hasAttribute('data-like')) {
+            e.preventDefault();
+
+            const curId = +btn.dataset.like;
+            handleToggleLike(btn);
+
+            await handleClickLike(curId);
         }
 
-        if (!itemExists) {
-            const newItem = {
-                id: curId,
-                quantity: quantity,
-                price
-            };
-            cart.push(newItem);
+        if (btn.hasAttribute('data-cart')) {
+            e.preventDefault();
+
+            const curId = +btn.dataset.cart;
+
+            await addToCart(curId);
         }
-
-        localStorage.setItem('cart', JSON.stringify(cart));
-
-        updateHeader();
     });
 }

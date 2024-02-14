@@ -3,7 +3,8 @@ import { getProducts } from "../api/apiProducts.js";
 import { generateBlogs } from "./markups/blogsMarkup.js";
 import { generateHighlightCategories } from "./markups/categoriesMarkup.js";
 import { generateProducts } from "./markups/productsMarkup.js";
-import { addToCart } from "../utils/addToCart.js";
+import { addToCart, handleLikeAddCart } from "../utils/addToCart.js";
+import { handleClickLike, handleToggleLike } from "../utils/addLike.js";
 
 const hotProductsControl = document.querySelector('.hot_product .list_cate');
 const hotProductContainer = document.querySelector('.list_prod');
@@ -33,12 +34,12 @@ async function init() {
 
     await generateProducts(hotProductContainer, orgProducts.slice(0, 8));
     handleNavControl(orgProducts);
-    addToCart();
+    handleLikeAddCart();
 
     generateBlogs(blogContainer, blogs.slice(0, 3));
 }
 
-init()
+init();
 
 
 

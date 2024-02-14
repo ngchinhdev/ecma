@@ -1,5 +1,6 @@
 import { createNewOrder } from "../api/apiOrders.js";
-import { getProducts } from "../api/apiProducts.js";
+import { getProducts, updatePurchased } from "../api/apiProducts.js";
+import { getUser } from "../api/apiUsers.js";
 import { generateProductToPay } from "./markups/checkoutMarkup.js";
 
 const fullName = document.querySelector(".name");
@@ -130,6 +131,16 @@ async function getProductsToPay() {
 
 getProductsToPay();
 
+const isLogged = localStorage.getItem('isLogin');
+if (isLogged) {
+    const loggedUser = await getUser(`?id=${isLogged}`);
+
+    fullName.value = loggedUser[0].name;
+    phoneNum.value = loggedUser[0].phoneNumber;
+    email.value = loggedUser[0].email;
+    address.value = loggedUser[0].address;
+}
+
 form.onsubmit = async function (e) {
     e.preventDefault();
     if (!(checkName(fullName) && checkPhoneNumber(phoneNum) && checkEmail(email) &&
@@ -146,7 +157,7 @@ form.onsubmit = async function (e) {
 
         const payloadData = {
             ...data,
-            userId: 1,
+            userId: isLogged || '',
             orderAt: new Date().toISOString(),
             status: 0,
             products: productsToPay.map(prod => ({
@@ -157,6 +168,9 @@ form.onsubmit = async function (e) {
         };
 
         await createNewOrder(payloadData);
-        // window.location.href = 'success-payment.html';
+
+        productsToPay.map(async prod => await updatePurchased(prod.id, prod.purchased, prod.quantityPay, prod.quantity));
+
+        window.location.href = 'success-payment.html';
     }
 };

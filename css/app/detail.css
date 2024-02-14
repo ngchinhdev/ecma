@@ -134,6 +134,10 @@ section.detail .product_details_text .heart_icon {
     background: #f5f5f5;
 }
 
+section.detail .product_details_text .heart_icon i.active {
+    color: var(--primary-color);
+}
+
 section.related_product {
     margin-top: 5rem;
     margin-bottom: 3rem;

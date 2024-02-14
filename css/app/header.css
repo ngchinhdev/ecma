@@ -172,6 +172,37 @@ header .cart_site li:not(:last-child) {
     cursor: pointer;
 }
 
+header .cart_site .likes-box {
+    position: absolute;
+    width: max-content;
+    display: none;
+    background-color: #fff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    font-size: .9rem;
+    padding: 6px;
+    border-radius: 4px;
+}
+
+header .cart_site .likes-box.active {
+    display: block;
+}
+
+header .cart_site .likes-box table .like-name {
+    width: 120px;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+header .cart_site .likes-box table td {
+    padding: 3px 6px;
+}
+
+header .cart_site .likes-box table img {
+    width: 30px;
+}
+
 header .cart_site li:last-child {
     margin-left: 10px;
     font-size: .9rem;
@@ -340,6 +371,12 @@ div.navigation_bar ul li i {
     padding-right: .8rem;
     font-size: 1.2rem;
     vertical-align: middle;
+}
+
+.item_pic_hover li a:not(:hover).active {
+    background: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
 }
 
 /* Loader  */
