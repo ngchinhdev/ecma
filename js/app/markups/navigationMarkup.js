@@ -11,7 +11,9 @@ export async function generateNavigation(cateId = null, query = null) {
                                         <span> <i class="fa fa-angle-right"></i> </span>
                                         <a href="product.html?cate=${cateId}">${curCate.name}</a>
                                     </li>`);
-    } else {
+    }
+
+    if (query) {
         const navigationBar = document.querySelector('.navigation_bar ul');
         navigationBar.insertAdjacentHTML('beforeend', `<li>
                                         <span> <i class="fa fa-angle-right"></i> </span>

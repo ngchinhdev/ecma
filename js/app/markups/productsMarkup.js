@@ -35,7 +35,7 @@ export async function generateProducts(container, filteredProducts) {
     const totalResults = filteredProducts.length === 0 ? orgProducts.length : filteredProducts.length;
 
     (filteredProducts.length === 0 ? orgProducts : filteredProducts).map(product => {
-        const { id, category, name, price, orgPrice, likes, purchased, mass, images } = product;
+        const { id, category, name, price, orgPrice, purchased, mass, images } = product;
         const discount = 100 - +(price / orgPrice * 100).toFixed(0);
 
         markup += `<div class="item_col">
@@ -53,7 +53,7 @@ export async function generateProducts(container, filteredProducts) {
                             <h6><a href="detail.html?cate=${category}&id=${id}">${name}</a></h6>
                             <div class="under">
                                 <h5><del>${formatPrice(orgPrice)}</del><span>${formatPrice(price)}</span><span class="mass">/${mass}</span></h5>
-                                <p><span>Lượt mua: ${purchased}</span><span><i class="fa fa-heart"></i> ${likes}</span></p>
+                                <p><span>Lượt mua: ${purchased}</span></p>
                             </div>
                         </div>
                     </div>

@@ -75,7 +75,7 @@ document.querySelector('.likes-box').addEventListener('click', async function (e
 
     if (!delLikedBtn.classList.contains('del-like')) return;
 
-    const likedId = +delLikedBtn.dataset.del;
+    const likedId = delLikedBtn.dataset.del;
 
     await handleDeleteLiked(likedId);
 });

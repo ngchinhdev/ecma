@@ -18,11 +18,11 @@ function removeItemCart() {
 
         if (!deleteBtn.hasAttribute('data-id')) return;
 
-        const deleteId = +deleteBtn.dataset.id;
+        const deleteId = deleteBtn.dataset.id;
 
         const cartData = getCart();
 
-        const newCart = cartData.filter(item => item.id !== deleteId);
+        const newCart = cartData.filter(item => item.id != deleteId);
 
         setCart(newCart);
 
@@ -36,7 +36,7 @@ function removeItemCart() {
 }
 
 function adjustQuantityItem(btn, isInc) {
-    const itemId = +btn.dataset[isInc ? 'inc' : 'dec'];
+    const itemId = btn.dataset[isInc ? 'inc' : 'dec'];
     const inputElement = btn.parentNode.querySelector('input');
     const currentQuantity = +inputElement.value;
 
@@ -44,7 +44,7 @@ function adjustQuantityItem(btn, isInc) {
 
     const cartData = getCart();
     const newCart = cartData.map(item =>
-        item.id === itemId ? { ...item, quantity: isInc ? item.quantity + 1 : item.quantity - 1 } : item
+        item.id == itemId ? { ...item, quantity: isInc ? item.quantity + 1 : item.quantity - 1 } : item
     );
 
     const trElement = btn.closest('tr');
@@ -69,6 +69,7 @@ function handleClickQuantity() {
             adjustQuantityItem(btn, false);
         }
     });
+
 }
 
 function handleChangeQuantity() {

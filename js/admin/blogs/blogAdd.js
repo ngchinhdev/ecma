@@ -70,7 +70,8 @@ export default async function handleAddBlog(container) {
             contents: formData.contents,
             thumbnail: formData.image.name,
             createAt: new Date().toISOString(),
-            comments: Math.ceil(Math.random() * 100)
+            comments: Math.ceil(Math.random() * 100),
+            category: +formData.category
         });
 
         initBlogs(container);

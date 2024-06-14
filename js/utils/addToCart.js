@@ -39,7 +39,7 @@ export function handleLikeAddCart() {
         if (btn.hasAttribute('data-like')) {
             e.preventDefault();
 
-            const curId = +btn.dataset.like;
+            const curId = btn.dataset.like;
             handleToggleLike(btn);
 
             await handleClickLike(curId);
@@ -48,7 +48,7 @@ export function handleLikeAddCart() {
         if (btn.hasAttribute('data-cart')) {
             e.preventDefault();
 
-            const curId = +btn.dataset.cart;
+            const curId = btn.dataset.cart;
 
             await addToCart(curId);
         }

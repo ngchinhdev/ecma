@@ -48,7 +48,7 @@ function handleLikeInDetail() {
         e.preventDefault();
 
         handleToggleLike(heartBtn.querySelector('i'));
-        await handleClickLike(+heartBtn.dataset.like);
+        await handleClickLike(heartBtn.dataset.like);
     });
 }
 
@@ -92,7 +92,7 @@ async function init() {
 
         e.preventDefault();
 
-        const curId = +addCartBtn.dataset.cart;
+        const curId = addCartBtn.dataset.cart;
 
         addToCart(curId, currQuantity);
     });
@@ -102,7 +102,7 @@ async function init() {
 
     const filteredProducts = orgProducts.filter(product => product.category === cateProd && product.id !== idProd);
 
-    await generateProducts(relatedProductContainer, filteredProducts.slice(0, 4));
+    await generateProducts(relatedProductContainer, filteredProducts.length ? filteredProducts.slice(0, 4) : orgProducts.slice(0, 2));
 }
 
 await init();
